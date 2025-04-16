@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <section className="relative">
-      <div className="flex justify-center  w-screen h-screen overflow-hidden scky">
-        <div className=" w-[calc(100vw - 8rem)] h-10/12 relative pointer-events-all">
-          <div className="fixed bg-white z-10 w-screen top-0 h-auto">
+      <div className="flex justify-center  w-screen h-screen overflow-hidden">
+        <div className=" w-screen h-10/12 relative pointer-events-none">
+          <div className="fixed top-0 bg-white z-10 w-screen h-auto">
             <Image
               src={"/signature_dark.png"}
               alt="Anish Raj Pandey"
@@ -30,7 +30,15 @@ export default function Home() {
   
         </div>
       </div>
-
+      <div className="text-5xl  font-bold text-white uppercase h-auto mix-blend-difference m-0 p-0 ">
+                <p>Hi, I am Anish</p>
+                
+              </div>
+      <div className="h-screen"></div>
+      <div className="h-screen"></div>
+      <div className="h-screen"></div>
+      <div className="h-screen"></div>
+      <div className="h-screen"></div>
     </section>
   );
 }
