@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  font-family: 'Baloo 2', sans-serif;
 }
 
 
@@ -12,3 +13,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  }
+  
+  .parent> .div1 { grid-area: 4 / 8 / 5 / 9; }
+  .parent> .div2 { grid-area: 3 / 7 / 4 / 8; }
+  .parent> .div3 { grid-area: 2 / 6 / 3 / 7; }
+  .parent> .div4 { grid-area: 1 / 5 / 2 / 6; }
+  .parent> .div5 { grid-area: 2 / 4 / 3 / 5; }
+  .parent> .div6 { grid-area: 3 / 3 / 4 / 4; }
+  .parent> .div7 { grid-area: 4 / 2 / 5 / 3; }
