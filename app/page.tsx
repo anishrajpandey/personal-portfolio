@@ -43,7 +43,7 @@ export default function Home() {
       >
         <div
           // style={{ y: backgroundY }}
-          className=" w-screen h-10/12  pointer-events-none threedcontainer"
+          className=" w-screen h-10/12 threedcontainer"
         >
           <div className="fixed top-0 bg-white z-10 w-screen h-auto">
             Website is in progress ...
@@ -62,7 +62,7 @@ export default function Home() {
         </div>
       </div>
       <div className="h-[70vh]"></div>
-      <div className="heroTextBox text-5x relative  font-bold text-white uppercase h-auto mix-blend-difference m-0 p-0 ">
+      <div className="heroTextBox text-5xl relative  font-bold text-white uppercase h-auto mix-blend-difference m-0 p-0 ">
         <p className="text-center">Hi, I am Anish</p>
       </div>
       <div className="h-screen"></div>
