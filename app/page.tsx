@@ -1,6 +1,5 @@
 "use client";
 import { useRef, useEffect } from "react";
-import translateElementOnScroll from "@/helpers/TranslateElementOnScroll";
 
 import Image from "next/image";
 
@@ -62,7 +61,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-[90vh]"></div>
+      <div className="h-[70vh]"></div>
       <div className="heroTextBox text-5x relative  font-bold text-white uppercase h-auto mix-blend-difference m-0 p-0 ">
         <p className="text-center">Hi, I am Anish</p>
       </div>
