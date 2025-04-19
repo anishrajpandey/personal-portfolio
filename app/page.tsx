@@ -31,9 +31,9 @@ export default function Home() {
       <div className="fixed top-0 bg-white z-10 w-screen h-auto">
         <Image
           src={"/signature_dark.png"}
-          alt="Anish Raj Pandey"
-          width={200}
-          height={200}
+          alt="Anish   Raj Pandey"
+          width={100}
+          height={100}
         />
         Web..
       </div>
@@ -57,48 +57,58 @@ export default function Home() {
             >
               {" "}
             </iframe>
-            <div className=" parent absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
-              <div className="div2  flex justify-center items-center">
+            <div className=" parent pointer-events-none absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
+              <div className="div3  flex justify-center items-center">
                 <Image
-                  src={"/ai.webp"}
+                  src={"/Brackets1.png"}
                   alt="Anish Raj Pandey"
-                  className="hover:animate-bounce delay-75 transition-all duration-200 cursor-pointer"
+                  className="  hover:animate-bounce delay-75 transition-all duration-200 cursor-pointer"
                   width={100}
                   height={100}
                 />
               </div>
-              <div className="div3  flex justify-center items-center">
+
+              <div className="div4  flex justify-center items-center">
+                <Image
+                  src={"/cloud-icon.png"}
+                  alt="Anish Raj Pandey"
+                  className="  hover:animate-bounce delay-150 transition-all duration-200 cursor-pointer"
+                  width={100}
+                  height={100}
+                />
+              </div>
+              {/* <div className="div4  flex justify-center items-center">
                 <Image
                   src={"/headphone.png"}
                   alt="Anish Raj Pandey"
-                  className="hover:animate-bounce delay-100 transition-all duration-200 cursor-pointer"
+                  className="  hover:animate-bounce delay-100 w-4xl transition-all duration-200 cursor-pointer"
                   width={100}
                   height={100}
                 />
-              </div>
-              <div className="div4  flex justify-center items-center">
+              </div> */}
+              <div className="div6  flex justify-center items-center">
                 <Image
-                  src={"/coding.webp"}
+                  src={"/coffee.png"}
                   alt="Anish Raj Pandey"
-                  className="hover:animate-bounce delay-150 transition-all duration-200 cursor-pointer"
+                  className="  hover:animate-bounce delay-200 transition-all duration-200 cursor-pointer"
                   width={100}
                   height={100}
                 />
               </div>
               <div className="div5  flex justify-center items-center">
                 <Image
-                  src={"/typescript.webp"}
+                  src={"/group 1.png"}
                   alt="Anish Raj Pandey"
-                  className="hover:animate-bounce delay-200 transition-all duration-200 cursor-pointer"
-                  width={100}
-                  height={100}
+                  className="  hover:animate-bounce delay-300 transition-all duration-200 cursor-pointer"
+                  width={150}
+                  height={150}
                 />
               </div>
-              <div className="div6  flex justify-center items-center">
+              <div className="div2  flex justify-center items-center">
                 <Image
-                  src={"/vscode.webp"}
+                  src={"/headphone1.png"}
                   alt="Anish Raj Pandey"
-                  className="hover:animate-bounce delay-300 transition-all duration-200 cursor-pointer"
+                  className="  hover:animate-bounce delay-300 transition-all duration-200 cursor-pointer"
                   width={100}
                   height={100}
                 />
