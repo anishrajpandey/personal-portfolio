@@ -124,7 +124,7 @@ export default function Home() {
         </p>
         <p className="text-center uppercase relative   text-gray-500 text-xl m-2 h-auto mix-blend-difference ">
           I build intelligent systems that transform data into actionable
-          insights...
+          insights
         </p>
       </div>
       <div className="h-screen"></div>
