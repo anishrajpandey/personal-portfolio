@@ -1,0 +1,96 @@
+.Iconsimg {
+  -webkit-mask-image: linear-gradient(
+    45deg,
+    #000 25%,
+    rgba(0, 0, 0, 0.2) 50%,
+    #000 75%
+  );
+  mask-image: linear-gradient(
+    45deg,
+    #000 25%,
+    rgba(0, 0, 0, 0.2) 50%,
+    #000 75%
+  );
+  -webkit-mask-size: 800%;
+  mask-size: 800%;
+  -webkit-mask-position: 0;
+  mask-position: 0;
+}
+
+.Iconsimg:hover {
+  transition: mask-position 2s ease, -webkit-mask-position 2s ease;
+  -webkit-mask-position: 120%;
+  mask-position: 120%;
+  opacity: 1;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.parent > .div1 {
+  grid-area: 4 / 1 / 5 / 2;
+  animation: slide-in 1s ease-in-out alternate infinite,
+    appear 3s linear forwards;
+  animation-delay: 300ms;
+}
+.parent > .div6 {
+  grid-area: 4 / 1 / 5 / 2;
+  animation: slide-in 1s ease-in-out alternate infinite,
+    appear 3s linear forwards;
+  animation-delay: 1.8s;
+}
+.parent > .div2 {
+  animation: slide-in 1s ease-in-out alternate infinite,
+    appear 3s linear forwards;
+  animation-delay: 900ms;
+
+  grid-area: 3 / 2 / 4 / 3;
+}
+.parent > .div3 {
+  animation: slide-in 1s ease-in-out alternate infinite,
+    appear 3s linear forwards;
+  animation-delay: 1500ms;
+
+  grid-area: 3 / 4 / 4 / 5;
+}
+.parent > .div4 {
+  animation: slide-in 1s ease-in-out alternate infinite,
+    appear 3s linear forwards;
+  animation-delay: 2s;
+
+  grid-area: 4 / 5 / 5 / 6;
+}
+.parent > .div5 {
+  animation: slide-in 1s ease-in-out alternate infinite,
+    appear 3s linear forwards;
+  animation-delay: 2.5s;
+
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
