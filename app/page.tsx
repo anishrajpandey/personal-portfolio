@@ -70,7 +70,7 @@ export default function Home() {
 
               <div className="div2 opacity-0  relative left-1/3 scale-170  flex justify-center items-center forwa">
                 <Image
-                  src={"/cloud-icon.png"}
+                  src={"/Cloud-icon.png"}
                   alt="error"
                   className="cursor-pointer Iconsimg "
                   width={100}
@@ -88,7 +88,7 @@ export default function Home() {
               </div>
               <div className="div5 opacity-0  relative left-36 top-12 scale-110 flex justify-center items-center forwa">
                 <Image
-                  src={"/coffee.png"}
+                  src={"/Coffee.png"}
                   alt="error"
                   className="cursor-pointer Iconsimg"
                   width={100}
@@ -97,7 +97,7 @@ export default function Home() {
               </div>
               <div className="div4 opacity-0  relative right-[250px] flex justify-center items-center forwa">
                 <Image
-                  src={"/group 1.png"}
+                  src={"/Group 1.png"}
                   alt="error"
                   className="cursor-pointer Iconsimg"
                   width={150}
