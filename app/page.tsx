@@ -1,6 +1,5 @@
 "use client";
 import { useRef, useEffect } from "react";
-import VerticalNav from "./verticalNav";
 import Image from "next/image";
 
 export default function Home() {
@@ -58,7 +57,7 @@ export default function Home() {
               {" "}
             </iframe>
             <div className=" parent pointer-events-none absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
-              <div className="div1 relative left-[250px] scale-200 rotate-45 flex justify-center items-center animate-ping fill-mode-forwards transition-delay-300"> 
+              <div className="div1 relative left-[250px] scale-200 rotate-45 flex justify-center items-center fill-mode-forwards transition-delay-300">
                 <Image
                   src={"/Brackets1.png"}
                   alt="Anish Raj Pandey"
@@ -68,7 +67,7 @@ export default function Home() {
                 />
               </div>
 
-              <div className="div2  relative left-1/3 scale-170  flex justify-center items-center animate-ping forwa">
+              <div className="div2  relative left-1/3 scale-170  flex justify-center items-center forwa">
                 <Image
                   src={"/cloud-icon.png"}
                   alt="Anish Raj Pandey"
@@ -77,7 +76,7 @@ export default function Home() {
                   height={100}
                 />
               </div>
-              <div className="div  flex justify-center items-center animate-ping forwa">
+              <div className="div  flex justify-center items-center forwa">
                 <Image
                   src={"/vscode.webp"}
                   alt="Anish Raj Pandey"
@@ -86,7 +85,7 @@ export default function Home() {
                   height={100}
                 />
               </div>
-              <div className="div5  relative left-36 top-12 scale-110 flex justify-center items-center animate-ping forwa">
+              <div className="div5  relative left-36 top-12 scale-110 flex justify-center items-center forwa">
                 <Image
                   src={"/coffee.png"}
                   alt="Anish Raj Pandey"
@@ -95,7 +94,7 @@ export default function Home() {
                   height={100}
                 />
               </div>
-              <div className="div4  relative right-[250px] flex justify-center items-center animate-ping forwa">
+              <div className="div4  relative right-[250px] flex justify-center items-center forwa">
                 <Image
                   src={"/group 1.png"}
                   alt="Anish Raj Pandey"
@@ -104,7 +103,7 @@ export default function Home() {
                   height={150}
                 />
               </div>
-              <div className="div3 flex justify-center items-center animate-ping forwa">
+              <div className="div3 flex justify-center items-center forwa">
                 <Image
                   src={"/headphone1.png"}
                   alt="Anish Raj Pandey"

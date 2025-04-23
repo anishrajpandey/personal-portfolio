@@ -3,16 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  font-family: 'Baloo 2', sans-serif;
+  font-family: "Baloo 2", sans-serif;
   --lerp-0: 1;
   --lerp-1: 0.5625;
   --lerp-2: 0.25;
   --lerp-3: 0.0625;
   --lerp-4: 0;
-
 }
-
-
 
 body {
   background: var(--background);
@@ -20,17 +17,47 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .parent {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+}
+
+.parent > .div1 {
+  grid-area: 4 / 1 / 5 / 2;
+  animation: slide-in 1s ease-in-out alternate infinite;
+  animation-delay: 300ms;
+}
+.parent > .div2 {
+  animation: slide-in 1s ease-in-out alternate infinite;
+  animation-delay: 900ms;
+  grid-area: 3 / 2 / 4 / 3;
+}
+.parent > .div3 {
+  animation: slide-in 1s ease-in-out alternate infinite;
+  animation-delay: 1500ms;
+  grid-area: 3 / 4 / 4 / 5;
+}
+.parent > .div4 {
+  animation: slide-in 1s ease-in-out alternate infinite;
+  animation-delay: 2s;
+  grid-area: 4 / 5 / 5 / 6;
+}
+.parent > .div5 {
+  animation: slide-in 1s ease-in-out alternate infinite;
+  animation-delay: 2.5s;
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(0);
   }
-  
-  .parent > .div1 { grid-area: 4 / 1 / 5 / 2; }
-  .parent > .div2 { grid-area: 3 / 2 / 4 / 3; }
-  .parent > .div3 { grid-area: 3 / 4 / 4 / 5; }
-  .parent > .div4 { grid-area: 4 / 5 / 5 / 6; }
-  .parent > .div5 { grid-area: 1 / 3 / 2 / 4; }
+  10% {
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
