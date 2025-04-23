@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
+import "../styles/icons.css";
 
 export default function Home() {
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -56,12 +57,12 @@ export default function Home() {
             >
               {" "}
             </iframe>
-            <div className=" parent pointer-events-none absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
+            <div className=" parent pointer-events-all absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
               <div className="div1 opacity-0 relative left-[20rem] scale-150 flex justify-center items-center fill-mode-forwards transition-delay-300">
                 <Image
                   src={"/Brackets1.png"}
-                  alt="Anish Raj Pandey"
-                  className="  "
+                  alt="error"
+                  className="cursor-pointer Iconsimg"
                   width={100}
                   height={100}
                 />
@@ -70,17 +71,17 @@ export default function Home() {
               <div className="div2 opacity-0  relative left-1/3 scale-170  flex justify-center items-center forwa">
                 <Image
                   src={"/cloud-icon.png"}
-                  alt="Anish Raj Pandey"
-                  className="  hover:animate-bounce delay-150 transition-all duration-200 cursor-pointer"
+                  alt="error"
+                  className="cursor-pointer Iconsimg "
                   width={100}
                   height={100}
                 />
               </div>
-              <div className="div6 opacity-0 flex justify-center items-center ">
+              <div className="div6 opacity-0 flex relative scale-75 left-[30rem] bottom-[17rem] justify-center items-center ">
                 <Image
                   src={"/vscode.webp"}
-                  alt="Anish Raj Pandey"
-                  className="  hover:animate-bounce relative bottom-[17rem] left-[30rem]  scale-75 transition-all cursor-pointer"
+                  alt="error"
+                  className="cursor-pointer Iconsimg  "
                   width={100}
                   height={100}
                 />
@@ -88,8 +89,8 @@ export default function Home() {
               <div className="div5 opacity-0  relative left-36 top-12 scale-110 flex justify-center items-center forwa">
                 <Image
                   src={"/coffee.png"}
-                  alt="Anish Raj Pandey"
-                  className="  hover:animate-bounce delay-200 transition-all duration-200 cursor-pointer"
+                  alt="error"
+                  className="cursor-pointer Iconsimg"
                   width={100}
                   height={100}
                 />
@@ -97,8 +98,8 @@ export default function Home() {
               <div className="div4 opacity-0  relative right-[250px] flex justify-center items-center forwa">
                 <Image
                   src={"/group 1.png"}
-                  alt="Anish Raj Pandey"
-                  className="  hover:animate-bounce delay-300 transition-all duration-200 cursor-pointer"
+                  alt="error"
+                  className="cursor-pointer Iconsimg"
                   width={150}
                   height={150}
                 />
@@ -106,8 +107,8 @@ export default function Home() {
               <div className="div3 opacity-0 flex justify-center items-center forwa">
                 <Image
                   src={"/headphone1.png"}
-                  alt="Anish Raj Pandey"
-                  className="  hover:animate-bounce delay-300 transition-all duration-200 cursor-pointer"
+                  alt="error"
+                  className="cursor-pointer Iconsimg"
                   width={100}
                   height={100}
                 />
