@@ -14,7 +14,7 @@ const AboutMe = () => {
           <span className="  text-[#008074]">About Me</span>
         </div>
         <main className="flex flex-col-reverse md:flex-row justify-center items-center h-[80vh]">
-          <div className="relative z-100 w-[50vw] h-full p-2 md:p-8 flex flex-col justify-center items-center">
+          <div className="relative z-100 w-[50vw] h-full p-2 md:p-8 text-xl md:text-2xl  text-gray-700">
             <div className="absolute -z-100 bottom-6 opacity-5">
               <Image
                 src={"/grayscaleBanner.png"}
@@ -24,10 +24,27 @@ const AboutMe = () => {
                 height={400}
               />
             </div>
-            I am a passionate machine learning enthusiast with a keen interest
-            in exploring the latest advancements in AI and data science. My
-            journey has been fueled by a desire to leverage technology to solve
-            real-world problems and make a positive impact.
+            Howdy! I’m{" "}
+            <span className="text-[#008074] font-semibold">
+              Anish Raj Pandey
+            </span>{" "}
+            , an undergraduate Computer Science student from Nepal at{" "}
+            <span className="text-[#008074] font-semibold">
+              {" "}
+              Texas State University.
+            </span>{" "}
+            I’m passionate about building
+            <span className="text-[#008074] font-semibold">
+              {" "}
+              full-stack applications
+            </span>{" "}
+            and exploring the exciting world of
+            <span className="text-[#008074] font-semibold">
+              {" "}
+              Arificial Intelligence
+            </span>
+            . I love solving problems and creating meaningful solutions that
+            make an impact. Let’s connect and build something amazing together!
           </div>
           <div className="w-[40vw] ">
             <Image
