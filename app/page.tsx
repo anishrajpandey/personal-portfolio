@@ -1,11 +1,42 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import "../styles/icons.css";
 import AboutMe from "./AboutMe";
 
 export default function Home() {
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get current scroll position
+      const currentScrollPos = window.pageYOffset;
+
+      // Determine if the user is scrolling up or down
+      const isScrollingDown = currentScrollPos > prevScrollPos;
+
+      // Only update visibility if the user has scrolled a minimum amount
+      // This prevents small scroll adjustments from triggering the navbar
+      const scrollDifference = Math.abs(currentScrollPos - prevScrollPos);
+      if (scrollDifference > 10) {
+        setVisible(!isScrollingDown);
+      }
+
+      // Update previous scroll position
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+  // This effect will handle the translation of the element on scroll
 
   useEffect(() => {
     const element = document.querySelector(".threedcontainer");
@@ -30,7 +61,11 @@ export default function Home() {
   return (
     <>
       <section className="relative ">
-        <div className="fixed top-0 bg-white z-10 w-screen h-auto">
+        <div
+          className={`fixed top-0 left-0 right-0 z-50 bg-white shadow transition-transform duration-300 ${
+            visible ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
           <Image
             src={"/signature_dark.png"}
             alt="Anish   Raj Pandey"
