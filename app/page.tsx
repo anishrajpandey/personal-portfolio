@@ -2,6 +2,7 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import "../styles/icons.css";
+import AboutMe from "./AboutMe";
 
 export default function Home() {
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -27,113 +28,109 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="relative">
-      <div className="fixed top-0 bg-white z-10 w-screen h-auto">
-        <Image
-          src={"/signature_dark.png"}
-          alt="Anish   Raj Pandey"
-          width={100}
-          height={100}
-        />
-        Web..
-      </div>
-      <div
-        ref={backgroundRef}
-        className="flex justify-center fixed  w-screen h-fit overflow-hidden"
-      >
+    <>
+      <section className="relative ">
+        <div className="fixed top-0 bg-white z-10 w-screen h-auto">
+          <Image
+            src={"/signature_dark.png"}
+            alt="Anish   Raj Pandey"
+            width={100}
+            height={100}
+          />
+          Web..
+        </div>
         <div
-          // style={{ y: backgroundY }}
-          className=" w-screen h-10/12 threedcontainer relative"
+          ref={backgroundRef}
+          className="flex justify-center fixed  w-screen h-fit overflow-hidden"
         >
-          <div className="fixed top-0 bg-white z-10 w-screen h-auto"></div>
+          <div
+            // style={{ y: backgroundY }}
+            className=" w-screen h-10/12 threedcontainer relative"
+          >
+            <div className="fixed top-0 bg-white z-10 w-screen h-auto"></div>
 
-          <div className="text-white absolute bg-white w-screen bottom-0 h-auto z-10">
-            <div className="w-screen min-h-16 text-2xl text-center m-0 p-0"></div>
-          </div>
-          <div className="relative">
-            <iframe
-              className=" w-screen h-[75vh]"
-              src="https://sketchfab.com/models/890bbeb2ad5a4bd6b80df2089416aae7/embed?autostart=1&preload=1&transparent=0"
-            >
-              {" "}
-            </iframe>
-            <div className=" parent pointer-events-all absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
-              <div className="div1 opacity-0 relative left-[20rem] scale-150 flex justify-center items-center fill-mode-forwards transition-delay-300">
-                <Image
-                  src={"/Brackets1.png"}
-                  alt="error"
-                  className="cursor-pointer Iconsimg"
-                  width={100}
-                  height={100}
-                />
-              </div>
+            <div className="text-white absolute bg-white w-screen bottom-0 h-auto z-10">
+              <div className="w-screen min-h-16 text-2xl text-center m-0 p-0"></div>
+            </div>
+            <div className="relative">
+              <iframe
+                className=" w-screen h-[75vh]"
+                src="https://sketchfab.com/models/890bbeb2ad5a4bd6b80df2089416aae7/embed?autostart=1&preload=1&transparent=0"
+              >
+                {" "}
+              </iframe>
+              <div className=" parent pointer-events-all absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
+                <div className="div1 opacity-0 relative left-[20rem] scale-150 flex justify-center items-center fill-mode-forwards transition-delay-300">
+                  <Image
+                    src={"/Brackets1.png"}
+                    alt="error"
+                    className="cursor-pointer Iconsimg"
+                    width={100}
+                    height={100}
+                  />
+                </div>
 
-              <div className="div2 opacity-0  relative left-1/3 scale-170  flex justify-center items-center forwa">
-                <Image
-                  src={"/Cloud-icon.png"}
-                  alt="error"
-                  className="cursor-pointer Iconsimg "
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className="div6 opacity-0 flex relative scale-75 left-[30rem] bottom-[17rem] justify-center items-center ">
-                <Image
-                  src={"/vscode.webp"}
-                  alt="error"
-                  className="cursor-pointer Iconsimg  "
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className="div5 opacity-0  relative left-36 top-12 scale-110 flex justify-center items-center forwa">
-                <Image
-                  src={"/Coffee.png"}
-                  alt="error"
-                  className="cursor-pointer Iconsimg"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className="div4 opacity-0  relative right-[250px] flex justify-center items-center forwa">
-                <Image
-                  src={"/Group 1.png"}
-                  alt="error"
-                  className="cursor-pointer Iconsimg"
-                  width={150}
-                  height={150}
-                />
-              </div>
-              <div className="div3 opacity-0 flex justify-center items-center forwa">
-                <Image
-                  src={"/headphone1.png"}
-                  alt="error"
-                  className="cursor-pointer Iconsimg"
-                  width={100}
-                  height={100}
-                />
+                <div className="div2 opacity-0  relative left-1/3 scale-170  flex justify-center items-center forwa">
+                  <Image
+                    src={"/Cloud-icon.png"}
+                    alt="error"
+                    className="cursor-pointer Iconsimg "
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                <div className="div6 opacity-0 flex relative scale-75 left-[30rem] bottom-[17rem] justify-center items-center ">
+                  <Image
+                    src={"/vscode.webp"}
+                    alt="error"
+                    className="cursor-pointer Iconsimg  "
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                <div className="div5 opacity-0  relative left-36 top-12 scale-110 flex justify-center items-center forwa">
+                  <Image
+                    src={"/Coffee.png"}
+                    alt="error"
+                    className="cursor-pointer Iconsimg"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                <div className="div4 opacity-0  relative right-[250px] flex justify-center items-center forwa">
+                  <Image
+                    src={"/Group 1.png"}
+                    alt="error"
+                    className="cursor-pointer Iconsimg"
+                    width={150}
+                    height={150}
+                  />
+                </div>
+                <div className="div3 opacity-0 flex justify-center items-center forwa">
+                  <Image
+                    src={"/headphone1.png"}
+                    alt="error"
+                    className="cursor-pointer Iconsimg"
+                    width={100}
+                    height={100}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="h-[70vh]"></div>
-      <div className="heroTextBox  ">
-        <p className="text-center uppercase relative text-gray-200 font-semibold bg  text-6xl h-auto mix-blend-difference m-0 p-0">
-          Hi, I am Anish
-        </p>
-        <p className="text-center uppercase relative   text-gray-500 text-xl m-2 h-auto mix-blend-difference ">
-          I build intelligent systems that transform data into actionable
-          insights
-        </p>
-      </div>
-      <div className="h-screen"></div>
-
-      {/* <div className=" relative rotate-90 ml-0">
-        <VerticalNav />
-      </div> */}
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
-    </section>
+        <div className="h-[70vh]"></div>
+        <div className="heroTextBox  ">
+          <p className="text-center uppercase relative text-gray-200 font-semibold bg  text-6xl h-auto mix-blend-difference m-0 p-0">
+            Hi, I am Anish
+          </p>
+          <p className="text-center uppercase relative   text-gray-500 text-xl m-2 h-auto mix-blend-difference ">
+            I build intelligent systems that transform data into actionable
+            insights
+          </p>
+        </div>
+      </section>
+      <AboutMe />
+    </>
   );
 }
