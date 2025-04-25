@@ -2,7 +2,14 @@
 // Import necessary React hooks and components
 import React, { useEffect, useRef, useState } from "react";
 // Define cursor colors
-const CURSOR_COLORS: any = {
+
+type ColorValue = "green-400" | "orange-500" | "sky-500";
+
+interface CursorColors {
+  [key: string]: ColorValue;
+}
+
+const CURSOR_COLORS: CursorColors = {
   h1: "green-400",
   button: "orange-500",
   default: "sky-500",
@@ -21,10 +28,12 @@ const CustomCursor = () => {
   useEffect(() => {
     // Event listener for mouse movement
     const handleMouseMove = (e: any) => {
-      setPosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+      const handleMouseMove = (e: MouseEvent) => {
+        setPosition({
+          x: e.clientX,
+          y: e.clientY,
+        });
+      };
     };
     // Event listener for mouse click
     const handleMouseDown = () => {
