@@ -43,7 +43,7 @@ const CustomCursor = () => {
         setClicked(false);
       }, 800);
     };
-    // Event listener for mouseover (hover) on HTML elements
+    // event listener for mouseover (hover) on HTML elements
     const handleMouseOver = (e: any) => {
       // Get the HTML tag name
       const tagName = e.target.tagName.toLowerCase();
