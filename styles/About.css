@@ -3,12 +3,12 @@
   /* border: 2px solid #ffffff2b; */
   border: 2px solid black;
   border-radius: 50%;
-  mix-blend-mode: screen;
+  mix-blend-mode: difference;
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 999999 !important ;
   backdrop-filter: blur(1px);
-  background-color: #f1c503;
+  background-color: #3a3a3a;
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
   cursor: none !important; /* Let's hide the default cursor so it looks way better */
 }
@@ -26,7 +26,4 @@
   opacity: 0 !important;
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out,
     opacity 0.2s ease-in-out;
-}
-#aboutMain {
-  /* cursor: none; */
 }

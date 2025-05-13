@@ -29,7 +29,7 @@ const AboutMe = () => {
 
   return (
     <>
-      {/* <FlareCursor /> */}
+      <FlareCursor />
       <div id={"aboutMain"} className="mt-[25vh] px-2 md:px-8">
         <div className="text-2xl md:text-5xl font-bold tracking-wide text-center justify-center items-center  gap-1">
           <span>A little bit </span>
@@ -67,7 +67,18 @@ const AboutMe = () => {
             . I love solving problems and creating meaningful solutions that
             make an impact. Let’s connect and build something amazing together!
             <div className="w-full py-16">
-              <button className="bg-p">Lets Get to know each other</button>
+              <button
+                className="bg-[var(--color-primary)] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                onClick={() => {
+                  const element = document.getElementById("contact");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                  console.log("clicked");
+                }}
+              >
+                Lets Get to know each other
+              </button>
             </div>
           </div>
           {/* image  */}
