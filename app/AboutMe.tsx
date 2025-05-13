@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import "./../styles/About.css";
 import FlareCursor from "./FlareCursor";
 import Image from "next/image";
-import { time } from "console";
 // import CustomCursor from "./CustomCursor";
 
 const AboutMe = () => {
@@ -68,7 +67,7 @@ const AboutMe = () => {
             make an impact. Let’s connect and build something amazing together!
             <div className="w-full py-16">
               <button
-                className="bg-[var(--color-primary)] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-[var(--color-primary)]  hover:bg-[#265a49] text-white font-bold py-3 px-4 rounded-sm transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => {
                   const element = document.getElementById("contact");
                   if (element) {
