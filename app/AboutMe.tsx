@@ -1,13 +1,35 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import "./../styles/About.css";
 import FlareCursor from "./FlareCursor";
 import Image from "next/image";
+import { time } from "console";
 // import CustomCursor from "./CustomCursor";
 
 const AboutMe = () => {
+  const [timeOfDay, setTimeOfDay] = useState("");
+
+  useEffect(() => {
+    const getTimeOfDay = () => {
+      const hour = new Date().getHours();
+
+      if (hour >= 5 && hour < 12) {
+        return "Good Morning!";
+      } else if (hour >= 12 && hour < 17) {
+        return "Good Afternoon!";
+      } else if (hour >= 17 && hour < 21) {
+        return "Good Evening!";
+      } else {
+        return "Hey I hope you are having a wonderful night! ";
+      }
+    };
+
+    setTimeOfDay(getTimeOfDay());
+  }, []);
+
   return (
     <>
-      <FlareCursor />
+      {/* <FlareCursor /> */}
       <div id={"aboutMain"} className="mt-[25vh] px-2 md:px-8">
         <div className="text-2xl md:text-5xl font-bold tracking-wide text-center justify-center items-center  gap-1">
           <span>A little bit </span>
@@ -24,7 +46,7 @@ const AboutMe = () => {
                 height={400}
               />
             </div>
-            Howdy! I’m{" "}
+            {timeOfDay} I’m{" "}
             <span className="text-[#008074] font-semibold">
               Anish Raj Pandey
             </span>{" "}
