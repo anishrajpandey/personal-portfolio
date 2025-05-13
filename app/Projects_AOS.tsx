@@ -1,0 +1,134 @@
+import * as motion from "motion/react-client";
+import type { Variants } from "motion/react";
+
+export default function ScrollTriggered() {
+  return (
+    <section className="flex gap-3.5 relative ">
+      <div style={container} className="translate-x-50">
+        {food.map(([emoji, hueA, hueB], i) => (
+          <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />
+        ))}
+      </div>
+
+      <div
+        style={container}
+        className=" w-1/2 top-0 left-0 right-0 bottom-0 z-10 bg-red-100 translate-y-50 opacity-50"
+      >
+        {food.map(([_, __, ____, title, description, live], i) => {
+          return (
+            <div className="h-[430px]" key={i}>
+              {title}
+              {description}
+              {live}
+            </div>
+          );
+        })}
+        Hello
+      </div>
+    </section>
+  );
+}
+
+interface CardProps {
+  emoji: string;
+  hueA: number;
+  hueB: number;
+  i: number;
+}
+
+function Card({ emoji, hueA, hueB, i }: CardProps) {
+  const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
+
+  return (
+    <motion.div
+      className={`card-container-${i} mb-20 `}
+      style={cardContainer}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ amount: 1, once: false }}
+      transition={{ staggerChildren: 0.2 }}
+    >
+      <div style={{ ...splash, background }} />
+      <motion.div style={card} variants={cardVariants} className="card">
+        {emoji}
+      </motion.div>
+    </motion.div>
+  );
+}
+
+const cardVariants: Variants = {
+  offscreen: {
+    y: 300,
+  },
+  onscreen: {
+    y: 50,
+    rotate: -10,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
+
+const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
+
+/**
+ * ==============   Styles   ================
+ */
+
+const container: React.CSSProperties = {
+  margin: "100px auto ",
+
+  // maxWidth: 500,
+  width: "50vw",
+};
+
+const cardContainer: React.CSSProperties = {
+  overflow: "hidden",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  position: "relative",
+  paddingTop: 20,
+  marginBottom: -120,
+};
+
+const splash: React.CSSProperties = {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
+};
+
+const card: React.CSSProperties = {
+  fontSize: 164,
+  width: 300,
+  height: 430,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: 20,
+  background: "#f5f5f5",
+  boxShadow:
+    "0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075)",
+  transformOrigin: "10% 60%",
+};
+
+/**
+ * ==============   Data   ================
+ */
+
+const food: [string, number, number, string, string, string, string, string][] =
+  [
+    ["🍅", 340, 10, "string", "string", "string", "string", "string"],
+    ["🍊", 20, 40, "string", "string", "string", "string", "string"],
+    ["🍋", 60, 90, "string", "string", "string", "string", "string"],
+    ["🍐", 80, 120, "string", "string", "string", "string", "string"],
+    ["🍏", 100, 140, "string", "string", "string", "string", "string"],
+    ["🫐", 205, 245, "string", "string", "string", "string", "string"],
+    ["🍆", 260, 290, "string", "string", "string", "string", "string"],
+    ["🍇", 290, 320, "string", "string", "string", "string", "string"],
+  ];

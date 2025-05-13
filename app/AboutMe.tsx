@@ -29,8 +29,8 @@ const AboutMe = () => {
   return (
     <>
       <FlareCursor />
-      <div id={"aboutMain"} className="mt-[25vh] px-2 md:px-8">
-        <div className="text-2xl md:text-5xl font-bold tracking-wide text-center justify-center items-center  gap-1">
+      <div id={"aboutMain"} className="my-[25vh] px-2 md:px-8">
+        <div className="text-xl md:text-5xl font-bold tracking-wide text-center justify-center items-center  gap-1">
           <span>A little bit </span>
           <span className="  text-[#008074]">About Me</span>
         </div>

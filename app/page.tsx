@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import "../styles/icons.css";
 import AboutMe from "./AboutMe";
+import Projects from "./Projects";
 
 export default function Home() {
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -166,6 +167,7 @@ export default function Home() {
         </div>
       </section>
       <AboutMe />
+      <Projects />
     </>
   );
 }
