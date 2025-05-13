@@ -36,7 +36,8 @@ const AboutMe = () => {
           <span className="  text-[#008074]">About Me</span>
         </div>
         <main className="flex flex-col-reverse md:flex-row justify-center items-center h-[80vh]">
-          <div className="relative z-100 w-[50vw] h-full p-2 md:p-8 text-xl md:text-2xl  text-gray-700">
+          {/* text */}
+          <div className="relative z-100 w-screen md:w-[50vw] h-full md:mt-52 p-2 md:p-8 text-xl md:text-2xl  text-gray-700">
             <div className="absolute -z-100 bottom-6 opacity-5">
               <Image
                 src={"/grayscaleBanner.png"}
@@ -47,10 +48,8 @@ const AboutMe = () => {
               />
             </div>
             {timeOfDay} I’m{" "}
-            <span className="text-[#008074] font-semibold">
-              Anish Raj Pandey
-            </span>{" "}
-            , an undergraduate Computer Science student from Nepal at{" "}
+            <span className="text-[#008074] font-semibold">Anish</span>, an
+            undergraduate Computer Science student from Nepal at{" "}
             <span className="text-[#008074] font-semibold">
               {" "}
               Texas State University.
@@ -67,7 +66,11 @@ const AboutMe = () => {
             </span>
             . I love solving problems and creating meaningful solutions that
             make an impact. Let’s connect and build something amazing together!
+            <div className="w-full py-16">
+              <button className="bg-p">Lets Get to know each other</button>
+            </div>
           </div>
+          {/* image  */}
           <div className="w-[40vw] ">
             <Image
               src={"/image.png"}
