@@ -3,28 +3,19 @@ import type { Variants } from "motion/react";
 
 export default function ScrollTriggered() {
   return (
-    <section className="flex gap-3.5 relative ">
-      <div style={container} className="md:translate-x-50">
-        {food.map(([emoji, hueA, hueB], i) => (
-          <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />
-        ))}
-      </div>
-
-      <div
-        style={container}
-        className=" w-1/2 top-0 left-0 right-0 bottom-0 z-10 bg-red-100 translate-y-50 opacity-50"
-      >
-        {food.map(([_, __, ____, title, description, live], i) => {
-          return (
-            <div className="h-[245px] mb-[86px] bg-green-100 my-1" key={i}>
-              {title}
-              {description}
-              {live}
-            </div>
-          );
-        })}
-        Hello
-      </div>
+    <section className="w-screen bg-amber-400 flex flex-col gap-3.5  items-center px-12 ">
+      {food.map(([emoji, hueA, hueB, title, description, live], i) => (
+        <div className="flex justify-start" key={i}>
+          <div style={container} className=" bg-red-400">
+            <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />{" "}
+          </div>
+          <div className=" bg-purple-400 h-auto mr-24 w-[70vh] mt-24" key={i}>
+            {title}
+            {description}
+            {live}
+          </div>
+        </div>
+      ))}
     </section>
   );
 }
@@ -78,10 +69,11 @@ const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
  */
 
 const container: React.CSSProperties = {
-  margin: "100px auto ",
+  margin: "100px ",
 
   // maxWidth: 500,
   width: "50vw",
+  background: "#f5f5f5",
 };
 
 const cardContainer: React.CSSProperties = {
@@ -89,7 +81,9 @@ const cardContainer: React.CSSProperties = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  width: "50vw",
   position: "relative",
+
   paddingTop: 20,
   marginBottom: -120,
 };
