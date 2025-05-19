@@ -16,7 +16,7 @@ export default function ScrollTriggered() {
       >
         {food.map(([_, __, ____, title, description, live], i) => {
           return (
-            <div className="h-[430px]" key={i}>
+            <div className="h-[245px] mb-[86px] bg-green-100 my-1" key={i}>
               {title}
               {description}
               {live}
@@ -123,12 +123,12 @@ const card: React.CSSProperties = {
 
 const food: [string, number, number, string, string, string, string, string][] =
   [
-    ["🍅", 340, 10, "string", "string", "string", "string", "string"],
-    ["🍊", 20, 40, "string", "string", "string", "string", "string"],
-    ["🍋", 60, 90, "string", "string", "string", "string", "string"],
-    ["🍐", 80, 120, "string", "string", "string", "string", "string"],
-    ["🍏", 100, 140, "string", "string", "string", "string", "string"],
+    ["🍅", 340, 10, "string", "string", "string", "string", "strindg"],
+    ["🍊", 20, 40, "string", "string", "string", "string", "strding"],
+    ["🍋", 60, 90, "string", "string", "string", "string", "stqring"],
+    ["🍐", 80, 120, "string", "string", "string", "string", "stqring"],
+    ["🍏", 100, 140, "string", "string", "string", "string", "sstring"],
     ["🫐", 205, 245, "string", "string", "string", "string", "string"],
-    ["🍆", 260, 290, "string", "string", "string", "string", "string"],
-    ["🍇", 290, 320, "string", "string", "string", "string", "string"],
+    ["🍆", 260, 290, "string", "string", "string", "string", "xstring"],
+    ["🍇", 290, 320, "string", "string", "string", "string", "strin qg"],
   ];
