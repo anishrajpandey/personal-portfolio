@@ -4,7 +4,7 @@ import type { Variants } from "motion/react";
 export default function ScrollTriggered() {
   return (
     <section className="flex gap-3.5 relative ">
-      <div style={container} className="translate-x-50">
+      <div style={container} className="md:translate-x-50">
         {food.map(([emoji, hueA, hueB], i) => (
           <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />
         ))}
