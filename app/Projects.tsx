@@ -9,6 +9,7 @@ export default function Projects() {
         <span> worth mentioning </span>
       </div>
       <Projects_AOS />
+      <div className="h-screen"></div>
     </main>
   );
 }

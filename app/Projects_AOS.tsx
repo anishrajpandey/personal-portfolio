@@ -1,13 +1,23 @@
 import * as motion from "motion/react-client";
 import type { Variants } from "motion/react";
+import Image from "next/image";
 
 export default function ScrollTriggered() {
   return (
-    <section className="w-screen bg-amber-400 flex flex-col gap-3.5  items-center px-12 ">
-      {food.map(([emoji, hueA, hueB, title, description, live], i) => (
-        <div className="flex justify-start" key={i}>
-          <div style={container} className=" bg-red-400">
-            <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />{" "}
+    <section className="w-screen flex flex-col gap-3.5  items-center px-12 ">
+      {projectsData.map(([title, description, srcWeb, srcPhone, live], i) => (
+        <div className="flex flex-col md:flex-row justify-start " key={i}>
+          <div style={{ ...container }} className="relative ">
+            <div className="absolute top-0 -bottom-full -z-1 opacity-50 grayscale-50">
+              <Image
+                src={"/projectImages/pustikaWeb.png"}
+                alt="error"
+                className="myImage w-full object-contain h-full "
+                width={400}
+                height={400}
+              />
+            </div>
+            <Card i={i} emoji={srcPhone} hueA={0} hueB={0} key={srcPhone} />{" "}
           </div>
           <div className=" bg-purple-400 h-auto mr-24 w-[70vh] mt-24" key={i}>
             {title}
@@ -27,8 +37,8 @@ interface CardProps {
   i: number;
 }
 
-function Card({ emoji, hueA, hueB, i }: CardProps) {
-  const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
+function Card({ emoji, i }: CardProps) {
+  const background = "transparent";
 
   return (
     <motion.div
@@ -40,8 +50,18 @@ function Card({ emoji, hueA, hueB, i }: CardProps) {
       transition={{ staggerChildren: 0.2 }}
     >
       <div style={{ ...splash, background }} />
-      <motion.div style={card} variants={cardVariants} className="card">
-        {emoji}
+      <motion.div
+        style={card}
+        variants={cardVariants}
+        className="card overflow-auto"
+      >
+        <Image
+          src={emoji}
+          alt="React"
+          width={300}
+          height={500}
+          className="text-white object-cover"
+        />
       </motion.div>
     </motion.div>
   );
@@ -72,8 +92,8 @@ const container: React.CSSProperties = {
   margin: "100px ",
 
   // maxWidth: 500,
+  // height: "00px",
   width: "50vw",
-  background: "#f5f5f5",
 };
 
 const cardContainer: React.CSSProperties = {
@@ -98,7 +118,6 @@ const splash: React.CSSProperties = {
 };
 
 const card: React.CSSProperties = {
-  fontSize: 164,
   width: 300,
   height: 430,
   display: "flex",
@@ -115,14 +134,64 @@ const card: React.CSSProperties = {
  * ==============   Data   ================
  */
 
-const food: [string, number, number, string, string, string, string, string][] =
+const projectsData: [
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string[],
+  string[]
+][] = [
   [
-    ["🍅", 340, 10, "string", "string", "string", "string", "strindg"],
-    ["🍊", 20, 40, "string", "string", "string", "string", "strding"],
-    ["🍋", 60, 90, "string", "string", "string", "string", "stqring"],
-    ["🍐", 80, 120, "string", "string", "string", "string", "stqring"],
-    ["🍏", 100, 140, "string", "string", "string", "string", "sstring"],
-    ["🫐", 205, 245, "string", "string", "string", "string", "string"],
-    ["🍆", 260, 290, "string", "string", "string", "string", "xstring"],
-    ["🍇", 290, 320, "string", "string", "string", "string", "strin qg"],
-  ];
+    "title",
+    "description",
+    "/projectImages/pustikaWeb.png",
+    "/projectImages/pustikaMobile.png",
+    "srcWeb",
+    "srcMobile",
+    ["tech"],
+    ["features"],
+  ],
+  [
+    "title",
+    "description",
+    "/projectImages/pustikaWeb.png",
+    "/projectImages/pustikaMobile.png",
+    "srcWeb",
+    "srcMobile",
+    ["tech"],
+    ["features"],
+  ],
+  [
+    "title",
+    "description",
+    "/projectImages/pustikaWeb.png",
+    "/projectImages/pustikaMobile.png",
+    "srcWeb",
+    "srcMobile",
+    ["tech"],
+    ["features"],
+  ],
+  [
+    "title",
+    "description",
+    "/projectImages/pustikaWeb.png",
+    "/projectImages/pustikaMobile.png",
+    "srcWeb",
+    "srcMobile",
+    ["tech"],
+    ["features"],
+  ],
+  [
+    "title",
+    "description",
+    "/projectImages/pustikaWeb.png",
+    "/projectImages/pustikaMobile.png",
+    "srcWeb",
+    "srcMobile",
+    ["tech"],
+    ["features"],
+  ],
+];
