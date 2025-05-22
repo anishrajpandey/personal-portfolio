@@ -8,7 +8,10 @@ export default function ScrollTriggered() {
       {projectsData.map(([title, description, srcWeb, srcPhone, live], i) => (
         <div className="flex flex-col md:flex-row justify-start " key={i}>
           <div style={{ ...container }} className="relative ">
-            <div className="absolute top-0 -bottom-full -z-1 opacity-50 grayscale-50">
+            <div className="absolute top-0 -bottom-full -z-2">
+              <h2>
+                <span className="text-4xl font-bold">{title}</span>
+              </h2>
               <Image
                 src={"/projectImages/pustikaWeb.png"}
                 alt="error"
@@ -17,6 +20,7 @@ export default function ScrollTriggered() {
                 height={400}
               />
             </div>
+            {/* <div className="absolute -z-0 bg-black top-0 bottom-0"></div> */}
             <Card i={i} emoji={srcPhone} hueA={0} hueB={0} key={srcPhone} />{" "}
           </div>
           <div className=" bg-purple-400 h-auto mr-24 w-[70vh] mt-24" key={i}>
@@ -38,7 +42,7 @@ interface CardProps {
 }
 
 function Card({ emoji, i }: CardProps) {
-  const background = "transparent";
+  const background = "green";
 
   return (
     <motion.div
@@ -49,7 +53,7 @@ function Card({ emoji, i }: CardProps) {
       viewport={{ amount: 1, once: false }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <div style={{ ...splash, background }} />
+      <div style={{ ...splash, background }} />s
       <motion.div
         style={card}
         variants={cardVariants}
