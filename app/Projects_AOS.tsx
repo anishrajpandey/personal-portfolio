@@ -1,35 +1,45 @@
 import * as motion from "motion/react-client";
 import type { Variants } from "motion/react";
 import Image from "next/image";
+import CheckedList from "@/helpers/CheckedList";
 
 export default function ScrollTriggered() {
   return (
     <section className="w-screen flex flex-col gap-3.5  items-center px-12 ">
-      {projectsData.map(([title, description, srcWeb, srcPhone, live], i) => (
-        <div className="flex flex-col md:flex-row justify-start " key={i}>
-          <div style={{ ...container }} className="relative ">
-            <div className="absolute top-0 -bottom-full -z-2">
-              <h2>
-                <span className="text-4xl font-bold">{title}</span>
-              </h2>
-              <Image
-                src={"/projectImages/pustikaWeb.png"}
-                alt="error"
-                className="myImage w-full object-contain h-full "
-                width={400}
-                height={400}
-              />
+      {projectsData.map(
+        (
+          [title, description, srcWeb, srcPhone, live, github, features, tech],
+          i
+        ) => (
+          <div className="flex flex-col md:flex-row justify-start " key={i}>
+            <div style={{ ...container }} className="relative ">
+              <div className="absolute top-0 -bottom-full -z-2 overflow-hidden">
+                <Image
+                  src={srcWeb}
+                  alt="error"
+                  className="myImage w-full object-contain h-full grayscale-100 hover:grayscale-0 transition-all overflow-hidden "
+                  width={400}
+                  height={400}
+                />
+              </div>
+              {/* <div className="absolute -z-0 bg-black top-0 bottom-0"></div> */}
+              <Card i={i} emoji={srcPhone} hueA={0} hueB={0} key={srcPhone} />{" "}
             </div>
-            {/* <div className="absolute -z-0 bg-black top-0 bottom-0"></div> */}
-            <Card i={i} emoji={srcPhone} hueA={0} hueB={0} key={srcPhone} />{" "}
+            <div
+              className="border-red-600 border h-auto mr-24 w-[70vh] mt-48 flex flex-col py-6 px-2"
+              key={i}
+            >
+              <h2 className="text-xl md:text-2xl text-[#008074] font-semibold">
+                {title}
+              </h2>
+              <p className="text-md md:text-lg text-gray-900  ">
+                {description}
+              </p>
+              <CheckedList text={features} />
+            </div>
           </div>
-          <div className=" bg-purple-400 h-auto mr-24 w-[70vh] mt-24" key={i}>
-            {title}
-            {description}
-            {live}
-          </div>
-        </div>
-      ))}
+        )
+      )}
     </section>
   );
 }
@@ -42,7 +52,8 @@ interface CardProps {
 }
 
 function Card({ emoji, i }: CardProps) {
-  const background = "green";
+  const background =
+    "linear-gradient(41deg,rgba(0, 128, 116, 1) 0%, rgba(0, 0, 0, 0) 57%)";
 
   return (
     <motion.div
@@ -149,14 +160,14 @@ const projectsData: [
   string[]
 ][] = [
   [
-    "title",
-    "description",
+    "Pustika",
+    "Full-Stack Marketplace for used books",
     "/projectImages/pustikaWeb.png",
     "/projectImages/pustikaMobile.png",
-    "srcWeb",
-    "srcMobile",
-    ["tech"],
-    ["features"],
+    "https://pustika.vercel.app/",
+    "https://github.com/anishrajpandey/pustika",
+    ["User Authentication", "Payment Integration", "Responsive Design"],
+    ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
   ],
   [
     "title",
