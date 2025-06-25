@@ -2,6 +2,7 @@ import * as motion from "motion/react-client";
 import type { Variants } from "motion/react";
 import Image from "next/image";
 import CheckedList from "@/helpers/CheckedList";
+import "../styles/Projects.css";
 
 export default function ScrollTriggered() {
   return (
@@ -36,6 +37,20 @@ export default function ScrollTriggered() {
                 {description}
               </p>
               <CheckedList text={features} />
+
+              <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates perferendis ex quos, obcaecati eius optio eos, eaque
+                incidunt maxime, architecto ipsam. Eveniet quia tempore
+                inventore ab exercitationem incidunt blanditiis tempora
+                veritatis beatae. Asperiores, at sunt? Adipisci atque quibusdam
+                animi magnam commodi facilis at suscipit fugiat?
+              </div>
+              <div className="flex">
+                <a href={srcWeb}>
+                  <button className="liveButton">Click Here</button>
+                </a>
+              </div>
             </div>
           </div>
         )
@@ -170,43 +185,47 @@ const projectsData: [
     ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
   ],
   [
-    "title",
-    "description",
+    "QuickPlate",
+    "Food delivery app for local home-based chefs",
     "/projectImages/pustikaWeb.png",
     "/projectImages/pustikaMobile.png",
-    "srcWeb",
-    "srcMobile",
-    ["tech"],
-    ["features"],
+    "https://quickplate.vercel.app/",
+    "https://github.com/anishrajpandey/quickplate",
+    ["Live Order Tracking", "Chef Profiles", "Ratings & Reviews"],
+    ["Next.js", "Firebase", "Tailwind CSS", "Mapbox"],
   ],
   [
-    "title",
-    "description",
+    "TaskZen",
+    "Minimalist task manager for focus-driven productivity",
     "/projectImages/pustikaWeb.png",
     "/projectImages/pustikaMobile.png",
-    "srcWeb",
-    "srcMobile",
-    ["tech"],
-    ["features"],
+    "https://taskzen.vercel.app/",
+    "https://github.com/anishrajpandey/taskzen",
+    ["Drag-and-Drop", "Dark Mode", "Progress Tracker"],
+    ["Vue.js", "Supabase", "Tailwind CSS"],
   ],
   [
-    "title",
-    "description",
+    "Rentify",
+    "Platform to list and find student apartments near campus",
     "/projectImages/pustikaWeb.png",
     "/projectImages/pustikaMobile.png",
-    "srcWeb",
-    "srcMobile",
-    ["tech"],
-    ["features"],
+    "https://rentify.vercel.app/",
+    "https://github.com/anishrajpandey/rentify",
+    [
+      "Location-Based Search",
+      "Chat Between Tenants & Owners",
+      "Lease Filtering",
+    ],
+    ["React", "Node.js", "MongoDB", "Socket.io", "Tailwind CSS"],
   ],
   [
-    "title",
-    "description",
+    "LangLink",
+    "Peer-to-peer language exchange app for international students",
     "/projectImages/pustikaWeb.png",
     "/projectImages/pustikaMobile.png",
-    "srcWeb",
-    "srcMobile",
-    ["tech"],
-    ["features"],
+    "https://langlink.vercel.app/",
+    "https://github.com/anishrajpandey/langlink",
+    ["Matching Algorithm", "Voice Chat", "Time Zone Conversion"],
+    ["React Native", "Firebase", "Expo", "Tailwind CSS"],
   ],
 ];

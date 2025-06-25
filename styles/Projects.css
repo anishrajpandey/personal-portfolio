@@ -1,0 +1,17 @@
+.liveButton {
+  color: #ecf0f1;
+  font-size: 17px;
+  background-color: var(--color-primary);
+  border: 1px solid #079587;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: 0px 6px 0px #01574e;
+  transition: all 0.1s;
+}
+
+.liveButton:hover {
+  box-shadow: 0px 2px 0px #079587;
+  position: relative;
+  top: 2px;
+}
