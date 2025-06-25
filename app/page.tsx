@@ -115,7 +115,7 @@ export default function Home() {
                     height={100}
                   />
                 </div>
-                <div className="div6 opacity-0 flex relative scale-75 left-[30rem] bottom-[17rem] justify-center items-center ">
+                <div className="div6 -0 flex relative scale-75 left-[30rem] bottom-[17rem] justify-center items-center ">
                   <Image
                     src={"/vscode.webp"}
                     alt="error"
@@ -157,10 +157,10 @@ export default function Home() {
         </div>
         <div className="h-[70vh]"></div>
         <div className="heroTextBox  ">
-          <p className="text-center uppercase relative text-gray-200 font-semibold bg  text-6xl h-auto mix-blend-difference m-0 p-0">
+          <p className="text-center uppercase relative text-[#008074] font-semibold text-6xl h-auto  m-0 p-0">
             Hi, I am Anish
           </p>
-          <p className="text-center uppercase relative   text-gray-500 text-xl m-2 h-auto mix-blend-difference ">
+          <p className="text-center uppercase relative    text-xl m-2 h-auto  ">
             I build intelligent systems that transform data into actionable
             insights
           </p>
