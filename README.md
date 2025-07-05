@@ -1,8 +1,8 @@
-# 🌐 Anish Raj Pandey — Personal Portfolio Website
+# 🌐 Anish Raj Pandey — Personal Portfolio Website (in development)
 
 Welcome to my personal portfolio website! This project is built to showcase who I am, what I’ve built, and where I’m headed. It combines a clean UI, responsive layout, and interactive 3D elements — all powered by modern web technologies like **React**, **Node.js**, **Next.js 15**, and **Three.js**.
 
-🔗 **Live Demo:** [https://anishrajpandey.vercel.app](https://anishrajpandey.vercel.app)
+🔗 **Live Demo :** [https://anishrajpandey.vercel.app](https://anishrajpandey.vercel.app)
 
 ---
 
@@ -88,46 +88,11 @@ Accessibility (a11y) enhancements
 
 🖼️ Screenshots
 ![Homepage Screenshot](public/screenshots/homepage.png) ![3D Section](public/screenshots/3dmodel.png)
+
 🤝 Contributing
 Contributions, feedback, and suggestions are always welcome!
-
-Fork the repository
-
-Create a new branch (git checkout -b feature-name)
-
-Commit your changes
-
-Push to the branch (git push origin feature-name)
-
-Open a Pull Request
-
-📩 Contact
-If you’d like to connect or collaborate:
-
-Email: anishpandey021@gmail.com
-
-GitHub: @anishrajpandey
-
-LinkedIn: linkedin.com/in/anishrajpandey
-
-Website: anishrajpandey.vercel.app
 
 📝 License
 This project is licensed under the MIT License.
 
 Made with ❤️ by Anish Raj Pandey
-
-markdown
-Copy
-Edit
-
----
-
-### ✅ Next Steps
-
-1. Save this as your `README.md` file in the root of the project.
-2. Add a `LICENSE` file (MIT recommended).
-3. Add screenshots in a `/public/screenshots/` folder and uncomment the `![Screenshot]()` blocks.
-4. Let me know if you want help generating a `LICENSE` or setting up SEO/meta tags.
-
-You're on the right path — this portfolio will represent you well both visually and technically.
