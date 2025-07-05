@@ -56,9 +56,7 @@ npm run dev
 Once the server starts, open http://localhost:3000 in your browser to view the website.
 
 📁 Folder Structure
-ruby
-Copy
-Edit
+
 personal-portfolio/
 ├── app/ # Next.js App Router pages
 │ ├── layout.tsx
