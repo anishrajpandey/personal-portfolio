@@ -5,8 +5,7 @@ import { format } from "date-fns";
 import { Calendar } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import {journalData} from "./data"; // Adjust the import path as necessary
-import { Jomhuria } from "next/font/google";
-// Replace with your actual journal data
+
 const journalEntries = journalData;
 
 function MoonJournalCalendar() {
