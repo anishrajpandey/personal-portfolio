@@ -46,9 +46,13 @@ export default function ScrollTriggered() {
                 animi magnam commodi facilis at suscipit fugiat?
               </div>
               <div className="flex">
-                <a href={srcWeb}>
-                  <button className="liveButton">Click Here</button>
+                <a href={live}>
+                  <button className="liveButton">Live</button>
                 </a>
+                <a href={github}>
+                  <button className="liveButton">Live</button>
+                </a>
+                <div>{tech}</div>
               </div>
             </div>
           </div>
