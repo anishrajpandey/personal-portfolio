@@ -9,7 +9,7 @@ export default function ScrollTriggered() {
     <section className="w-screen flex flex-col gap-3.5  items-center px-12 ">
       {projectsData.map(
         (
-          [title, description, srcWeb, srcPhone, live, github, features, tech],
+          [title, description, srcWeb, srcPhone, live, github, features, tech], // todo remove unused variables for production
           i
         ) => (
           <div className="flex flex-col md:flex-row justify-start " key={i}>
@@ -23,7 +23,6 @@ export default function ScrollTriggered() {
                   height={400}
                 />
               </div>
-              {/* <div className="absolute -z-0 bg-black top-0 bottom-0"></div> */}
               <Card i={i} emoji={srcPhone} hueA={0} hueB={0} key={srcPhone} />{" "}
             </div>
             <div
@@ -112,8 +111,6 @@ const cardVariants: Variants = {
   },
 };
 
-const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
-
 /**
  * ==============   Styles   ================
  */
@@ -185,10 +182,10 @@ const projectsData: [
     ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
   ],
   [
-    "QuickPlate",
-    "Food delivery app for local home-based chefs",
-    "/projectImages/pustikaWeb.png",
-    "/projectImages/pustikaMobile.png",
+    "DataNexus",
+    "Data hub for real-time analytics and visualization",
+    "/projectImages/datanexus_desktop.png",
+    "/projectImages/datanexus_mobile.png",
     "https://quickplate.vercel.app/",
     "https://github.com/anishrajpandey/quickplate",
     ["Live Order Tracking", "Chef Profiles", "Ratings & Reviews"],

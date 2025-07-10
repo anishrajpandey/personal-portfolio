@@ -12,11 +12,15 @@
     "@react-three/drei": "^10.0.6",
     "@react-three/fiber": "^9.1.2",
     "@types/three": "^0.175.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "gsap": "^3.12.7",
     "motion": "^12.11.0",
     "next": "15.2.3",
     "react": "^19.0.0",
+    "react-calendar": "^6.0.0",
     "react-dom": "^19.0.0",
+    "tailwind-variants": "^1.0.0",
     "three": "^0.175.0"
   },
   "devDependencies": {
