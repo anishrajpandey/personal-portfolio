@@ -30,8 +30,8 @@ export default function HappyBirthday() {
           transition={{ delay: 1, duration: 0.8 }}
         >
           On this special day, I want to remind you how much you mean to me.
-          Every journal, every memory, every moment together—has been a
-          beautiful chapter in our story. Here's to many more 💫
+          Every journal, every memory, every moment together has been a
+          beautiful chapter in our story. Here&apos;s to many more 💫
         </motion.p>
 
         <motion.button
