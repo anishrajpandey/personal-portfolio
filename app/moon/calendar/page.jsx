@@ -35,9 +35,17 @@ export default function JournalCalendar() {
   });
 
   const goToMonth = (monthIndex) => {
-    const newDate = new Date(year, monthIndex);
-    setYear(newDate.getFullYear());
-    setMonth(newDate.getMonth());
+    let newYear = year;
+    let newMonth = monthIndex;
+    if (monthIndex < 0) {
+      newYear = year - 1;
+      newMonth = 11;
+    } else if (monthIndex > 11) {
+      newYear = year + 1;
+      newMonth = 0;
+    }
+    setYear(newYear);
+    setMonth(newMonth);
   };
 
   const handlePrevMonth = () => {
@@ -55,26 +63,27 @@ export default function JournalCalendar() {
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
 
-  const getShape = (day) => {
-    const shapes = [
-      <svg key="circle" className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" /></svg>,
-      <svg key="square" className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" /></svg>,
-      <svg key="triangle" className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l8 16H4z" /></svg>,
-      <svg key="star" className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.39 7.26L22 9.27l-5.6 4.73L18.18 22 12 18.27 5.82 22l1.78-7.99L2 9.27l7.61-1.01z"/></svg>
-    ];
-    return shapes[day % shapes.length];
-  };
+  const isJuly = month === 6; // July index is 6
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center py-10 px-4">
-      <div className="flex items-center gap-4 mb-6">
+   <div
+    className="min-h-screen text-white flex flex-col items-center py-10 px-4 relative overflow-hidden"
+    style={{
+      backgroundColor: '#32325d',
+      backgroundImage: isJuly ? "url('/moon.jpg')" : "url('/moon.svg')",
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+    }}
+  >
+      <div className="flex items-center gap-4 mb-6 z-10">
         <button onClick={handlePrevMonth} className="text-pink-400 hover:text-pink-300">
           <ChevronLeft size={28} />
         </button>
-        <div className="text-3xl font-bold relative">
+        <div className="text-3xl font-bold relative flex items-center">
           <select
             value={month}
-            onChange={(e) => goToMonth(parseInt(e.target.value))}
+            onChange={(e) => goToMonth(parseInt(e.target.value, 10))}
             className="bg-gray-900 text-white font-bold rounded-md px-3 py-1"
           >
             {monthNames.map((m, idx) => (
@@ -84,8 +93,13 @@ export default function JournalCalendar() {
           <input
             type="number"
             value={year}
-            onChange={(e) => setYear(parseInt(e.target.value))}
+            onChange={(e) => {
+              const val = parseInt(e.target.value, 10);
+              if (!isNaN(val)) setYear(val);
+            }}
             className="ml-2 w-32 bg-gray-900 text-white font-bold rounded-md px-2 py-1"
+            min={1970}
+            max={2100}
           />
         </div>
         <button onClick={handleNextMonth} className="text-pink-400 hover:text-pink-300">
@@ -93,7 +107,7 @@ export default function JournalCalendar() {
         </button>
       </div>
 
-      <div className="grid grid-cols-7 gap-2 w-full max-w-4xl text-center">
+      <div className="grid grid-cols-7 gap-2 w-full max-w-4xl text-center z-10">
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => (
           <div key={d} className="text-pink-400 font-semibold text-lg">{d}</div>
         ))}
@@ -111,12 +125,15 @@ export default function JournalCalendar() {
               if (!date) return <div key={idx} />;
               const key = date.toDateString();
               const entry = dateToEntryMap[key];
-              const hasEntry = !!entry;
+              const hasEntry = Boolean(entry);
 
               const isToday =
                 date.getDate() === now.getDate() &&
                 date.getMonth() === now.getMonth() &&
                 date.getFullYear() === now.getFullYear();
+
+              // Special July 11 check
+              const isJuly11 = month === 6 && date.getDate() === 11;
 
               return (
                 <div
@@ -124,24 +141,24 @@ export default function JournalCalendar() {
                   onClick={() => {
                     if (hasEntry) window.open(entry.url, '_blank');
                   }}
-                  className={`rounded-xl h-20 flex flex-col justify-center items-center cursor-pointer transition-all relative group
-                    ${
-                      hasEntry
-                        ? 'bg-pink-600 hover:bg-pink-700 shadow-lg'
-                        : 'bg-gray-800 text-gray-400'
-                    }
-                    ${isToday ? 'border-2 border-white' : ''}`}
+                  className={`
+                    rounded-xl h-20 flex flex-col justify-center items-center cursor-pointer transition-all relative group
+                    ${hasEntry ? 'bg-pink-600 hover:bg-pink-700 shadow-lg' : 'bg-gray-800 text-gray-400'}
+                    ${isToday ? 'border-2 border-white' : ''}
+                    ${isJuly11 ? 'border-4 border-yellow-400 shadow-[0_0_10px_5px_rgba(252,211,77,0.75)] bg-yellow-500' : ''}
+                  `}
+                  title={isJuly11 ? '🎂 Birthday! July 11' : undefined}
                 >
-                  <span className="text-lg font-bold">{date.getDate()}</span>
+                  <span className="text-lg font-bold flex items-center justify-center gap-1">
+                    {date.getDate()}
+                    {isJuly11 && <span role="img" aria-label="Birthday cake">🎂</span>}
+                  </span>
                   {hasEntry && (
-                    <>
-                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 scale-90 origin-bottom group-hover:scale-100 transition-transform">
-                        <span className="text-xs font-semibold px-2 py-1 bg-pink-700 rounded-md shadow-md whitespace-nowrap">
-                          {entry.name.length > 20 ? entry.name.slice(0, 20) + '...' : entry.name}
-                        </span>
-                      </div>
-                      <div className="mt-1">{getShape(date.getDate())}</div>
-                    </>
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 scale-90 origin-bottom group-hover:scale-100 transition-transform">
+                      <span className="text-xs font-semibold px-2 py-1 bg-pink-700 rounded-md shadow-md whitespace-nowrap">
+                        {entry.name.length > 20 ? `${entry.name.slice(0, 17)}...` : entry.name}
+                      </span>
+                    </div>
                   )}
                 </div>
               );
