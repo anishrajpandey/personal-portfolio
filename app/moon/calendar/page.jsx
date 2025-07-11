@@ -1,15 +1,20 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { Plus, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+
+
 import { journalData } from '../data';
 import { createCalendar, getLocalTimeZone } from '@internationalized/date';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function JournalCalendar() {
   const calendar = useMemo(() => createCalendar('gregory'), []);
   const timeZone = getLocalTimeZone();
   const now = new Date();
+  const router = useRouter();
+
 
   const [month, setMonth] = useState(now.getMonth());
   const [year, setYear] = useState(now.getFullYear());
@@ -138,9 +143,12 @@ export default function JournalCalendar() {
               return (
                 <div
                   key={key}
-                  onClick={() => {
-                    if (hasEntry) window.open(entry.url, '_blank');
-                  }}
+                onClick={() => {
+  if (hasEntry) {
+    window.open(entry.url, '_blank');
+  } 
+}}
+
                   className={`
                     rounded-xl h-20 flex flex-col justify-center items-center cursor-pointer transition-all relative group
                     ${hasEntry ? 'bg-pink-600 hover:bg-pink-700 shadow-lg' : 'bg-gray-800 text-gray-400'}
@@ -149,6 +157,20 @@ export default function JournalCalendar() {
                   `}
                   title={isJuly11 ? '🎂 Birthday! July 11' : undefined}
                 >
+                  {/* Plus icon top-right for today */}
+                  {isToday && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+    router.push(`/moon/calendar/new?year=${year}&month=${month + 1}&day=${date.getDate()}`);
+                      }}
+                      className="absolute top-1 right-1 p-1 rounded-full bg-white text-gray-800 hover:bg-gray-200 transition"
+                      aria-label="Write today's journal"
+                    >
+                      <Plus size={14} />
+                    </button>
+                  )}
+
                   <span className="text-lg font-bold flex items-center justify-center gap-1">
                     {date.getDate()}
                     {isJuly11 && <span role="img" aria-label="Birthday cake">🎂</span>}
