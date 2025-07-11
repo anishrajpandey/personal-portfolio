@@ -75,7 +75,7 @@ export default function JournalCalendar() {
     className="min-h-screen text-white flex flex-col items-center py-10 px-4 relative overflow-hidden"
     style={{
       backgroundColor: '#32325d',
-      backgroundImage: isJuly ? "url('/moon.jpg')" : "url('/moon.svg')",
+      backgroundImage: isJuly ? "url('/moon.jpg')" : "url('/Moon.svg')",
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',

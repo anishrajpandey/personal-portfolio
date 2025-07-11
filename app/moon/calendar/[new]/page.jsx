@@ -21,7 +21,7 @@ export default function NewJournalPage() {
   return (
     <div
       className="min-h-screen w-full bg-cover bg-center bg-no-repeat text-black flex flex-col items-center justify-start p-4 sm:p-6 md:p-12"
-      style={{ backgroundImage: `url('/journalBack.jpg')` }}
+      style={{ backgroundImage: `url('/journalback.jpg')` }}
     >
       <div className="w-full max-w-6xl rounded-3xl p-4 sm:p-6 md:p-10 flex flex-col flex-grow bg-transparent">
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-2 text-center drop-shadow-lg">
