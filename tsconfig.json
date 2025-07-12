@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/verticalNav.jsx", "app/moon/calendar/page.jsx", "app/moon/calendar/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/verticalNav.jsx", "app/moon/calendar/page.jsx", "app/moon/calendar/page.js", "app/lib/uploadthing.js", "app/api/uploadthing/route.js", "app/lib/uploadthing.js"],
   "exclude": ["node_modules"]
 }

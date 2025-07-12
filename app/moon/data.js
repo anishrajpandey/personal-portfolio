@@ -1130,5 +1130,11 @@ export  const journalData = [
     date: "October 8, 2024",
     energyLevel: null
   },
+  {
+    url: "/bdayjournal.pdf",
+    name: "Birthday Special",
+    date: "July 11, 2025",
+    energyLevel: 8
+  }
  
 ]
