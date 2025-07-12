@@ -2,10 +2,10 @@
 
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { jsPDF } from 'jspdf';
-import { toast } from 'react-toastify';
-import { db } from '@/lib/firebase';
-import { collection, addDoc } from 'firebase/firestore';
+// import { jsPDF } from 'jspdf';
+// import { toast } from 'react-toastify';
+// import { db } from '@/lib/firebase';
+// import { collection, addDoc } from 'firebase/firestore';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function NewJournalPage() {
