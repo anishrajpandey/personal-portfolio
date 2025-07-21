@@ -29,7 +29,7 @@ export default function ScrollTriggered() {
               <Card i={i} emoji={srcPhone} hueA={0} hueB={0} key={srcPhone} />{" "}
             </div>
             <div
-              className="border-red-600 border h-auto mr-24 w-[70vh] mt-48 flex flex-col gap-2 py-6 px-2"
+              className="border-[#008074] h-auto mr-24 w-[70vh] mt-48 flex flex-col gap-2 py-6 px-2"
               key={i}
             >
               <h2 className="text-xl md:text-2xl text-[#008074] font-semibold">
