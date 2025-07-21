@@ -36,14 +36,14 @@ const AboutMe = () => {
         </div>
         <main className="flex flex-col-reverse md:flex-row justify-center items-center h-[80vh]">
           {/* text */}
-          <div className="relative z-100 w-screen md:w-[50vw] h-full md:mt-52 p-2 md:p-8 text-xl md:text-2xl  text-gray-700">
+          <div className="relative z-0 w-screen md:w-[50vw] h-full md:mt-52 p-2 md:p-8 text-xl md:text-2xl  text-gray-700">
             <div className="absolute -z-100 bottom-6 opacity-5">
               <Image
                 src={"/grayscaleBanner.png"}
                 alt="error"
-                className="myImage w-full object-contain h-full scale-300 "
+                className="myImage w-full object-contain h-full scale-300 user-select-none pointer-events-none "
                 width={400}
-                height={400}
+                height={200}
               />
             </div>
             {timeOfDay} I’m{" "}
