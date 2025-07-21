@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Baloo_Bhai_2, Montserrat } from "next/font/google";
 import "./globals.css";
-
 const balooBhai = Baloo_Bhai_2({
   variable: "--font-baloo-bhai",
   weight: ["400", "500", "700"],
