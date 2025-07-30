@@ -32,7 +32,7 @@ export default function ScrollTriggered() {
               className="border-[#008074] h-auto mr-24 w-[70vh] mt-48 flex flex-col gap-2 py-6 px-2"
               key={i}
             >
-              <h2 className="text-xl md:text-2xl text-[#008074] font-semibold">
+              <h2 className="text-xl md:text-3xl text-[#008074] font-semibold">
                 {title}
               </h2>
               <p className="text-md md:text-lg text-gray-600  ">
@@ -209,49 +209,5 @@ const projectsData: [
     "https://github.com/anishrajpandey/pustika",
     ["User Authentication", "Payment Integration", "Responsive Design"],
     ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-  ],
-  [
-    "DataNexus",
-    "Data hub for real-time analytics and visualization",
-    "/projectImages/datanexus_desktop.png",
-    "/projectImages/datanexus_mobile.png",
-    "https://quickplate.vercel.app/",
-    "https://github.com/anishrajpandey/quickplate",
-    ["Live Order Tracking", "Chef Profiles", "Ratings & Reviews"],
-    ["Next.js", "Firebase", "Tailwind CSS", "Mapbox"],
-  ],
-  [
-    "TaskZen",
-    "Minimalist task manager for focus-driven productivity",
-    "/projectImages/pustikaWeb.png",
-    "/projectImages/pustikaMobile.png",
-    "https://taskzen.vercel.app/",
-    "https://github.com/anishrajpandey/taskzen",
-    ["Drag-and-Drop", "Dark Mode", "Progress Tracker"],
-    ["Vue.js", "Supabase", "Tailwind CSS"],
-  ],
-  [
-    "Rentify",
-    "Platform to list and find student apartments near campus",
-    "/projectImages/pustikaWeb.png",
-    "/projectImages/pustikaMobile.png",
-    "https://rentify.vercel.app/",
-    "https://github.com/anishrajpandey/rentify",
-    [
-      "Location-Based Search",
-      "Chat Between Tenants & Owners",
-      "Lease Filtering",
-    ],
-    ["React", "Node.js", "MongoDB", "Socket.io", "Tailwind CSS"],
-  ],
-  [
-    "LangLink",
-    "Peer-to-peer language exchange app for international students",
-    "/projectImages/pustikaWeb.png",
-    "/projectImages/pustikaMobile.png",
-    "https://langlink.vercel.app/",
-    "https://github.com/anishrajpandey/langlink",
-    ["Matching Algorithm", "Voice Chat", "Time Zone Conversion"],
-    ["React Native", "Firebase", "Expo", "Tailwind CSS"],
   ],
 ];
