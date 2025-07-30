@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+// import { initializeApp } from 'firebase/app';
 // import { getFirestore } from 'firebase/firestore'; // Import services you need
 
 const firebaseConfig = {
@@ -10,6 +10,7 @@ const firebaseConfig = {
   appId: "1:your-actual-app-id:web:...",
   // measurementId: "G-your-measurement-id" // if you have Analytics
 };
+firebaseConfig.measurementId = "G-8V3Z0X1F5E"; // Add measurementId if needed
 
 // Initialize Firebase
 
