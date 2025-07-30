@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Anish Raj Pandey | Computer Science Student & Full-Stack Developer",
   description:
     "Personal portfolio of Anish Raj Pandey, a Computer Science student and full-stack MERN developer passionate about AI, web development, and startups. Explore my projects, coding journey, and tech insights.",
+  verification: {
+    google: "bEbjCvnJUV2XvpXPGUTVAjU5Bx6VRqgAicWLbSvpk8Q",
+  },
   keywords: [
     "Anish Raj Pandey",
     "Computer Science student",
