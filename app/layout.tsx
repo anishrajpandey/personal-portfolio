@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Anish Raj Pandey Portfolio",
     images: [
       {
-        url: "https://www.anishrajpandey.com.np/aboutme.png", // Replace with your rcceal OG image
+        url: "https://www.anishrajpandey.com.np/aboutme.png", // Replace with your rcl OG image
         width: 1200,
         height: 630,
         alt: "Anish Raj Pandey Portfolio Preview",
