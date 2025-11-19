@@ -1,14 +1,11 @@
 'use client';
 
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-// import { jsPDF } from 'jspdf';
-// import { toast } from 'react-toastify';
-// import { db } from '@/lib/firebase';
-// import { collection, addDoc } from 'firebase/firestore';
+
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function NewJournalPage() {
+function JournalContent() {
   const searchParams = useSearchParams();
   const year = searchParams.get('year');
   const month = searchParams.get('month');
@@ -54,8 +51,8 @@ export default function NewJournalPage() {
 
       const formData = new FormData();
       formData.append('file', file);
-       formData.append('upload_preset', 'my_journals'); // 👈 Replace this
-      formData.append('folder', 'journals'); 
+      formData.append('upload_preset', 'my_journals'); // 👈 Replace this
+      formData.append('folder', 'journals');
 
       const cloudinaryRes = await fetch(
         'https://api.cloudinary.com/v1_1/dmdr1uk6m/auto/upload', // 👈 Replace this
@@ -123,5 +120,13 @@ export default function NewJournalPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function NewJournalPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <JournalContent />
+    </Suspense>
   );
 }
