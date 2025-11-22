@@ -61,19 +61,15 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative ">
+      <section className="relative">
         <div
-          className={`h-14 fixed top-0 left-0 right-0 z-50 bg-white shadow transition-transform duration-300 ${
+          className={`h-12 fixed top-0 left-0 right-0 z-50 bg-white shadow transition-transform duration-300 bg-pink-500 ${
             visible ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <Image
-            src={"/signature_dark.png"}
-            alt="Anish   Raj Pandey"
-            width={100}
-            height={100}
-          />
+          Anish Raj Pandey
         </div>
+          {/* main landing page */}
         <div
           id="home"
           ref={backgroundRef}
@@ -92,11 +88,9 @@ export default function Home() {
               <iframe
                 className=" w-screen h-[75vh]"
                 src="https://sketchfab.com/models/890bbeb2ad5a4bd6b80df2089416aae7/embed?autostart=1&preload=1&transparent=0"
-              >
-                {" "}
-              </iframe>
-              <div className=" parent pointer-events-all absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
-                <div className="div1 opacity-0 relative left-[20rem] scale-150 flex justify-center items-center fill-mode-forwards transition-delay-300">
+              />
+              <div className=" parent absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
+                <div className="div1 pointer-events-auto opacity-0 relative left-[20rem] scale-150 flex justify-center items-center fill-mode-forwards transition-delay-300">
                   <Image
                     src={"/Brackets1.png"}
                     alt="error"
@@ -106,7 +100,7 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="div2 opacity-0  relative left-1/3 scale-170  flex justify-center items-center forwa">
+                <div className="div2 pointer-events-auto opacity-0  relative left-1/3 scale-170  flex justify-center items-center forwa">
                   <Image
                     src={"/Cloud-icon.png"}
                     alt="error"
@@ -115,7 +109,7 @@ export default function Home() {
                     height={100}
                   />
                 </div>
-                <div className="div6 -0 flex relative scale-75 left-[30rem] bottom-[17rem] justify-center items-center ">
+                <div className="div6 pointer-events-auto -0 flex relative scale-75 left-[30rem] bottom-[17rem] justify-center items-center ">
                   <Image
                     src={"/vscode.webp"}
                     alt="error"
@@ -124,7 +118,7 @@ export default function Home() {
                     height={100}
                   />
                 </div>
-                <div className="div5 opacity-0  relative left-36 top-12 scale-110 flex justify-center items-center forwa">
+                <div className="div5 pointer-events-auto opacity-0  relative left-36 top-12 scale-110 flex justify-center items-center forwa">
                   <Image
                     src={"/Coffee.png"}
                     alt="error"
@@ -133,7 +127,7 @@ export default function Home() {
                     height={100}
                   />
                 </div>
-                <div className="div4 opacity-0  relative right-[250px] flex justify-center items-center forwa">
+                <div className="div4 pointer-events-auto opacity-0  relative right-[250px] flex justify-center items-center forwa">
                   <Image
                     src={"/Group 1.png"}
                     alt="error"
@@ -142,7 +136,7 @@ export default function Home() {
                     height={150}
                   />
                 </div>
-                <div className="div3 opacity-0 flex justify-center items-center forwa">
+                <div className="div3 pointer-events-auto opacity-0 flex justify-center items-center forwa">
                   <Image
                     src={"/headphone1.png"}
                     alt="error"

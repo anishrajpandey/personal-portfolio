@@ -47,11 +47,11 @@ export default function ScrollTriggered() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="w-full liveButton flex  gap-0.5 items-center justify-center font-semibold">
+                  <div className="w-full liveButton flex  gap-0.5 items-center justify-center font-semibold">
                     {" "}
                     <MousePointer2 />
                     Live
-                  </button>
+                  </div>
                 </a>
                 <a
                   className="w-1/3 ml-2"
@@ -59,14 +59,14 @@ export default function ScrollTriggered() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="w-full githubButton flex  gap-0.5 items-center justify-center">
+                  <div className="w-full githubButton flex  gap-0.5 items-center justify-center">
                     <Github />
                     Github
-                  </button>
+                  </div>
                 </a>
               </div>
               <div>
-                <button
+                <div
                   className={`flex flex-wrap items-center justify-start  mt-2 w-full`}
                 >
                   {tech.map((item, index) => (
@@ -77,7 +77,7 @@ export default function ScrollTriggered() {
                       {item}
                     </span>
                   ))}
-                </button>
+                </div>
               </div>
             </div>
           </div>
