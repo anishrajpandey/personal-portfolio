@@ -2,13 +2,316 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import "../styles/icons.css";
+import {
+  Code,
+  Headphones,
+  BrainCircuit,
+  BookOpen,
+  Video,
+  Rocket,
+  Terminal,
+  Cpu,
+  Database,
+  Globe,
+  Server,
+  Laptop,
+  Keyboard,
+  Braces,
+  Command,
+  Bot,
+  Sparkles,
+  Network,
+  Workflow,
+  TrendingUp,
+  Target,
+  Sun,
+  Zap,
+  Lightbulb,
+  Mic,
+  Music,
+  Feather,
+  LucideIcon,
+} from "lucide-react";
+import * as motion from "motion/react-client";
+import { useTransform, useSpring, useMotionValue, MotionValue } from "framer-motion";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
+
+interface BackgroundIcon {
+  Icon: LucideIcon;
+  top: string;
+  left: string;
+  size: number;
+  delay: number;
+  scale: number;
+  opacity: number;
+  moveXDuration: number;
+  moveYDuration: number;
+  moveXOffset: number;
+  moveYOffset: number;
+}
+
+interface FloatingIconProps {
+  iconData: BackgroundIcon;
+  mouseX: MotionValue<number>;
+  mouseY: MotionValue<number>;
+}
+
+function FloatingIcon({ iconData, mouseX, mouseY }: FloatingIconProps) {
+  const iconRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  // Update position on mount and resize
+  useEffect(() => {
+    const updatePosition = () => {
+      if (typeof window !== "undefined") {
+        const x = (parseFloat(iconData.left) / 100) * window.innerWidth;
+        const y = (parseFloat(iconData.top) / 100) * window.innerHeight;
+        setPosition({ x, y });
+      }
+    };
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    return () => window.removeEventListener("resize", updatePosition);
+  }, [iconData.left, iconData.top]);
+
+  const distance = useTransform<number, number>([mouseX, mouseY], ([x, y]) => {
+    const dx = x - position.x;
+    const dy = y - position.y;
+    return Math.sqrt(dx * dx + dy * dy);
+  });
+
+  // Proximity radius: 100px (Torchlight effect)
+  const scale = useTransform(distance, [0, 100], [1.5, 1]);
+  const opacity = useTransform(distance, [0, 100], [1, iconData.opacity]);
+  const filter = useTransform(distance, [0, 100], [
+    "drop-shadow(0 0 15px rgba(255, 255, 255, 0.9))",
+    "drop-shadow(0 0 0px rgba(255, 255, 255, 0))"
+  ]);
+  
+  // Smooth out the transformations - Quicker response
+  const smoothScale = useSpring(scale, { stiffness: 500, damping: 25 });
+  const smoothOpacity = useSpring(opacity, { stiffness: 500, damping: 25 });
+
+  return (
+    <motion.div
+      ref={iconRef}
+      className="absolute pointer-events-auto cursor-pointer text-white transition-colors"
+      style={{
+        top: iconData.top,
+        left: iconData.left,
+        scale: smoothScale,
+        opacity: smoothOpacity,
+        filter: filter,
+      }}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{
+        opacity: iconData.opacity, // Base animation target (overridden by style prop for proximity)
+        scale: 1,
+        x: [0, iconData.moveXOffset, 0],
+        y: [0, iconData.moveYOffset, 0],
+      }}
+      transition={{
+        opacity: { duration: 1, delay: iconData.delay },
+        scale: { duration: 1, delay: iconData.delay },
+        x: {
+          duration: iconData.moveXDuration,
+          repeat: Infinity,
+          ease: "easeInOut",
+        },
+        y: {
+          duration: iconData.moveYDuration,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }
+      }}
+    >
+      <iconData.Icon size={iconData.size} strokeWidth={1.5} />
+    </motion.div>
+  );
+}
+
+interface DialogBubbleProps {
+  text: string;
+  className?: string;
+  tailClassName?: string;
+}
+
+function DialogBubble({ text, className = "", tailClassName = "" }: DialogBubbleProps) {
+  const words = text.split(" ");
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8, y: 10 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={`absolute z-40 max-w-xs p-4 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 ${className}`}
+    >
+      {/* Speech bubble tail */}
+      <div className={`absolute w-4 h-4 bg-white/90 transform rotate-45 border-b border-r border-gray-100 ${tailClassName}`}></div>
+      
+      <p className="text-gray-800 font-medium text-lg leading-relaxed">
+        {words.map((word, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2, delay: i * 0.1 + 0.5 }}
+            className="inline-block mr-1"
+          >
+            {word}
+          </motion.span>
+        ))}
+      </p>
+    </motion.div>
+  );
+}
 
 export default function Home() {
   const backgroundRef = useRef<HTMLDivElement>(null);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [backgroundIcons, setBackgroundIcons] = useState<BackgroundIcon[]>([]);
+  
+  const [showGogo, setShowGogo] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
+  
+  const mouseX = useMotionValue(-1000); // Start off-screen
+  const mouseY = useMotionValue(-1000);
+
+  useEffect(() => {
+    // Phase 1: 2s - 4s "Hi! Welcome"
+    const t1 = setTimeout(() => setShowGogo(true), 2000);
+    const t1_end = setTimeout(() => setShowGogo(false), 4000);
+    
+    // Phase 2: 5s - 8s "This is Gogo..."
+    const t2 = setTimeout(() => setShowWelcome(true), 5000);
+    const t3 = setTimeout(() => setShowWelcome(false), 8000);
+    
+    // Phase 3: 11s+ "Anish's got some interesting stuff..."
+    const t4 = setTimeout(() => setShowScroll(true), 11000);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t1_end);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+    };
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    mouseX.set(e.clientX);
+    mouseY.set(e.clientY + window.scrollY); // Account for scroll if needed, but fixed position uses clientY
+    // Actually, icons are in a "fixed" container? 
+    // The container is absolute w-full h-full top-0 left-0 z-30 inside a relative div.
+    // The relative div is inside a fixed div?
+    // Line 85: fixed w-screen h-fit.
+    // So clientX/Y should be correct relative to the viewport.
+    // Let's stick to client coordinates.
+  };
+  
+  // Update mouse motion values on window mouse move to catch it everywhere
+  useEffect(() => {
+    const handleWindowMouseMove = (e: MouseEvent) => {
+        mouseX.set(e.clientX);
+        mouseY.set(e.clientY);
+    };
+    window.addEventListener("mousemove", handleWindowMouseMove);
+    return () => window.removeEventListener("mousemove", handleWindowMouseMove);
+  }, [mouseX, mouseY]);
+
+  useEffect(() => {
+    const iconTypes = [
+      Code,
+      Headphones,
+      BrainCircuit,
+      BookOpen,
+      Video,
+      Rocket,
+      Terminal,
+      Cpu,
+      Database,
+      Globe,
+      Server,
+      Laptop,
+      Keyboard,
+      Braces,
+      Command,
+      Bot,
+      Sparkles,
+      Network,
+      Workflow,
+      TrendingUp,
+      Target,
+      Sun,
+      Zap,
+      Lightbulb,
+      Mic,
+      Music,
+      Feather,
+    ];
+
+    const generateIcons = () => {
+      const icons: BackgroundIcon[] = [];
+      const count = 65; // Increased density
+
+      let attempts = 0;
+      while (icons.length < count && attempts < 2000) {
+        attempts++;
+        const Icon = iconTypes[Math.floor(Math.random() * iconTypes.length)];
+        
+        // Uniform positioning
+        const left = Math.random() * 100;
+        const top = Math.random() * 100;
+
+        // Circular Safe Zone (Center Focus)
+        const dx = left - 50;
+        const dy = top - 50;
+        const distFromCenter = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distFromCenter < 22) continue; // Clear safe zone
+
+        // Even spacing check
+        let tooClose = false;
+        for (const existing of icons) {
+            const exDx = parseFloat(existing.left) - left;
+            const exDy = parseFloat(existing.top) - top;
+            const dist = Math.sqrt(exDx*exDx + exDy*exDy);
+            if (dist < 9) { 
+                tooClose = true;
+                break;
+            }
+        }
+        if (tooClose) continue;
+
+        // Uneven Sizes
+        const size = Math.random() * 30 + 20;
+        
+        // Opacity
+        const opacity = Math.random() * 0.1 + 0.05;
+
+        icons.push({
+          Icon,
+          top: `${top}%`,
+          left: `${left}%`,
+          size: size,
+          delay: Math.random() * 0.5,
+          scale: 1, 
+          opacity: opacity,
+          moveXDuration: Math.random() * 15 + 10, // 10-25s
+          moveYDuration: Math.random() * 15 + 10, // 10-25s
+          moveXOffset: Math.random() * 30 - 15, // -15px to 15px
+          moveYOffset: Math.random() * 30 - 15, // -15px to 15px
+        });
+      }
+      setBackgroundIcons(icons);
+    };
+
+    generateIcons();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,64 +390,41 @@ export default function Home() {
             <div className="relative">
               <iframe
                 className=" w-screen h-[75vh]"
-                src="https://sketchfab.com/models/890bbeb2ad5a4bd6b80df2089416aae7/embed?autostart=1&preload=1&transparent=0"
+                src="https://sketchfab.com/models/890bbeb2ad5a4bd6b80df2089416aae7/embed?autostart=1&preload=1&transparent=0&scrollwheel=0"
               />
-              <div className=" parent absolute  w-full h-auto  top-1/5 bottom-1/5  z-30 ">
-                <div className="div1 pointer-events-auto opacity-0 relative left-[20rem] scale-150 flex justify-center items-center fill-mode-forwards transition-delay-300">
-                  <Image
-                    src={"/Brackets1.png"}
-                    alt="error"
-                    className="cursor-pointer Iconsimg"
-                    width={100}
-                    height={100}
-                  />
-                </div>
+              
+              {showGogo && (
+                <DialogBubble 
+                  text="Welcome in... 🙏" 
+                  className="top-[20%] left-[25%] md:left-[35%]" 
+                  tailClassName="-bottom-2 right-4" 
+                />
+              )}
 
-                <div className="div2 pointer-events-auto opacity-0  relative left-1/3 scale-170  flex justify-center items-center forwa">
-                  <Image
-                    src={"/Cloud-icon.png"}
-                    alt="error"
-                    className="cursor-pointer Iconsimg "
-                    width={100}
-                    height={100}
+              {showWelcome && (
+                <DialogBubble 
+                  text="My name is Gogo 🐶" 
+                  className="top-[20%] right-[20%] md:right-[30%]" 
+                  tailClassName="-bottom-2 left-4" 
+                />
+              )}
+
+              {showScroll && (
+                <DialogBubble 
+                  text="Scroll down to learn more about Anish! 👇" 
+                  className="top-[20%] right-[20%] md:right-[30%]" 
+                  tailClassName="-bottom-2 left-4" 
+                />
+              )}
+              <div className="parent pointer-events-none absolute w-full h-full top-0 left-0 z-30 overflow-hidden">
+                {backgroundIcons.map((item, index) => (
+                  <FloatingIcon 
+                    key={index} 
+                    iconData={item} 
+                    mouseX={mouseX} 
+                    mouseY={mouseY} 
                   />
-                </div>
-                <div className="div6 pointer-events-auto -0 flex relative scale-75 left-[30rem] bottom-[17rem] justify-center items-center ">
-                  <Image
-                    src={"/vscode.webp"}
-                    alt="error"
-                    className="cursor-pointer Iconsimg  "
-                    width={100}
-                    height={100}
-                  />
-                </div>
-                <div className="div5 pointer-events-auto opacity-0  relative left-36 top-12 scale-110 flex justify-center items-center forwa">
-                  <Image
-                    src={"/Coffee.png"}
-                    alt="error"
-                    className="cursor-pointer Iconsimg"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-                <div className="div4 pointer-events-auto opacity-0  relative right-[250px] flex justify-center items-center forwa">
-                  <Image
-                    src={"/Group 1.png"}
-                    alt="error"
-                    className="cursor-pointer Iconsimg"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-                <div className="div3 pointer-events-auto opacity-0 flex justify-center items-center forwa">
-                  <Image
-                    src={"/headphone1.png"}
-                    alt="error"
-                    className="cursor-pointer Iconsimg"
-                    width={100}
-                    height={100}
-                  />
-                </div>
+                ))}
               </div>
             </div>
           </div>
