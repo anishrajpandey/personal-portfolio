@@ -63,7 +63,7 @@ export default function Home() {
     <>
       <section className="relative ">
         <div
-          className={`fixed top-0 left-0 right-0 z-50 bg-white shadow transition-transform duration-300 ${
+          className={`h-14 fixed top-0 left-0 right-0 z-50 bg-white shadow transition-transform duration-300 ${
             visible ? "translate-y-0" : "-translate-y-full"
           }`}
         >
@@ -73,9 +73,9 @@ export default function Home() {
             width={100}
             height={100}
           />
-          Web..
         </div>
         <div
+          id="home"
           ref={backgroundRef}
           className="flex justify-center fixed  w-screen h-fit overflow-hidden"
         >
