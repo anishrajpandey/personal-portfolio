@@ -1,22 +1,31 @@
 "use client";
-import React from "react";
+import { useState, useEffect } from "react";
+import Landing from "./Landing";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
-import Landing from "./Landing";
-
-import Skills from "./Skills";
 import Experience from "./Experience";
+import Skills from "./Skills";
 import Education from "./Education";
+import LoadingScreen from "@/components/LoadingScreen";
+import { AnimatePresence } from "motion/react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div className="space-y-24 md:space-y-32">
-      <Landing />
-      <AboutMe />
-      <Projects />
-      <Experience />
-      <Skills />
-      <Education />
-    </div>
+    <>
+      <AnimatePresence>
+        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+      
+      <div className="space-y-24 md:space-y-32">
+        <Landing />
+        <AboutMe />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Education />
+      </div>
+    </>
   );
 }
