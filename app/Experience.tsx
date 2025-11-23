@@ -89,7 +89,7 @@ const Experience = () => {
                 
                 {/* Gogo Image Side */}
                 <div className="w-full md:w-1/2 flex justify-center items-center">
-                   <div className="hidden md:block relative w-48 h-48 opacity-90 hover:opacity-100 transition-opacity duration-300 transform hover:scale-110">
+                   <div className="hidden md:block relative w-80 h-80 opacity-90 hover:opacity-100 transition-opacity duration-300 transform hover:scale-110">
                       <Image
                          src={item.gogoImage}
                          alt={`${item.role} Gogo`}

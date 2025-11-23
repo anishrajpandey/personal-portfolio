@@ -89,17 +89,17 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
   const displayProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   return (
-    <section className="w-full flex flex-col items-center px-4 relative">
+    <section className="w-full flex flex-col items-center px-4 relative bg-gray-50 py-20 rounded-3xl my-10">
       {/* Tabs */}
-      <div className="flex gap-4 mb-12 bg-gray-100 p-2 rounded-full">
+      <div className="flex gap-4 mb-16 bg-white p-2 rounded-full shadow-sm">
         {["All", "AI/Data", "Web"].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab as any)}
-            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
               activeTab === tab
                 ? "bg-[#008074] text-white shadow-md"
-                : "text-gray-600 hover:bg-gray-200"
+                : "text-gray-600 hover:bg-gray-100"
             }`}
           >
             {tab}
@@ -107,121 +107,118 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
         ))}
       </div>
 
-      <div className="w-full max-w-7xl space-y-24">
+      <div className="w-full max-w-7xl space-y-32">
         {displayProjects.map((project, i) => (
-          <div
-            key={i}
-            className={`flex flex-col ${
-              i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            } items-center gap-12 relative`}
-          >
-            {/* Image/Card Side */}
-            <div className="w-full md:w-1/2 relative group">
-              <div className="relative overflow-hidden rounded-xl shadow-xl border border-gray-100 bg-white">
-                <Image
-                  src={project.srcWeb}
-                  alt={project.title}
-                  width={800}
-                  height={500}
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                
-                {/* Mobile Card Overlay (visible only on mobile) */}
-                <div className="absolute inset-0 bg-black/80 flex flex-col justify-center items-center p-6 text-white md:hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                   <div className="flex items-center gap-4 text-sm mb-4">
-                      <span className="flex items-center gap-1"><Clock size={14}/> {project.hours}</span>
-                      <span className="flex items-center gap-1"><Calendar size={14}/> {project.date}</span>
-                   </div>
-                   <p className="text-sm text-center mb-4">{project.description}</p>
-                   <div className="flex gap-2 flex-wrap justify-center">
-                      {project.tech.slice(0,3).map(t => <span key={t} className="text-xs bg-[#008074] px-2 py-1 rounded">{t}</span>)}
-                   </div>
+          <div key={i} className="relative">
+            <div
+              className={`flex flex-col ${
+                i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } items-center gap-16 relative z-10`}
+            >
+              {/* Image/Card Side */}
+              <div className="w-full md:w-1/2 relative group">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl border border-gray-100 bg-white transform transition-transform duration-500 hover:-translate-y-2">
+                  <Image
+                    src={project.srcWeb}
+                    alt={project.title}
+                    width={800}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                  
+                  {/* Mobile Card Overlay (visible only on mobile) */}
+                  <div className="absolute inset-0 bg-black/80 flex flex-col justify-center items-center p-6 text-white md:hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                     <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                     <div className="flex items-center gap-4 text-sm mb-4">
+                        <span className="flex items-center gap-1"><Clock size={14}/> {project.hours}</span>
+                        <span className="flex items-center gap-1"><Calendar size={14}/> {project.date}</span>
+                     </div>
+                     <p className="text-sm text-center mb-4">{project.description}</p>
+                     <div className="flex gap-2 flex-wrap justify-center">
+                        {project.tech.slice(0,3).map(t => <span key={t} className="text-xs bg-[#008074] px-2 py-1 rounded">{t}</span>)}
+                     </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Desktop Gogo Integration */}
-              <div className="hidden md:block absolute -bottom-10 -right-10 w-32 pointer-events-none z-10">
-                 {i % 2 === 0 ? (
-                    <Image src="/gogo/gogo_grey_paw.png" alt="Gogo Paw" width={100} height={100} className="object-contain transform rotate-12"/>
-                 ) : (
-                    <Image src="/gogo/gogo_orange_tail.png" alt="Gogo Tail" width={100} height={100} className="object-contain transform -rotate-12"/>
-                 )}
-              </div>
-            </div>
+              {/* Content Side */}
+              <div className="w-full md:w-1/2 space-y-8">
+                <div className="flex items-center gap-4">
+                   <span className="px-4 py-1.5 bg-[#008074]/10 text-[#008074] rounded-full text-sm font-bold tracking-wide uppercase">
+                      {project.category}
+                   </span>
+                   <div className="flex items-center gap-6 text-gray-500 text-sm font-medium">
+                      <span className="flex items-center gap-2"><Clock size={18}/> {project.hours}</span>
+                      <span className="flex items-center gap-2"><Calendar size={18}/> {project.date}</span>
+                   </div>
+                </div>
 
-            {/* Content Side */}
-            <div className="w-full md:w-1/2 space-y-6">
-              <div className="flex items-center gap-4">
-                 <span className="px-3 py-1 bg-[#008074]/10 text-[#008074] rounded-full text-sm font-semibold">
-                    {project.category}
-                 </span>
-                 <div className="flex items-center gap-4 text-gray-500 text-sm">
-                    <span className="flex items-center gap-1"><Clock size={16}/> {project.hours}</span>
-                    <span className="flex items-center gap-1"><Calendar size={16}/> {project.date}</span>
-                 </div>
-              </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                  {project.title}
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  {project.description}
+                </p>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                {project.title}
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                {project.description}
-              </p>
+                {/* Features */}
+                <ul className="space-y-3">
+                  {project.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-3 text-gray-700 font-medium">
+                      <span className="w-2.5 h-2.5 bg-[#008074] rounded-full" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-              {/* Features */}
-              <ul className="space-y-2">
-                {project.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-gray-700">
-                    <span className="w-2 h-2 bg-[#008074] rounded-full" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {project.tech.map((item, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-semibold hover:border-[#008074] hover:text-[#008074] transition-colors duration-300 shadow-sm"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
 
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 pt-4">
-                {project.tech.map((item, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-[#008074] hover:text-white transition-colors duration-300"
+                {/* Buttons */}
+                <div className="flex gap-5 pt-4">
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-8 py-3.5 bg-[#008074] text-white rounded-xl font-bold hover:bg-[#006b61] transition-all hover:scale-105 shadow-lg hover:shadow-[#008074]/30"
                   >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              {/* Buttons */}
-              <div className="flex gap-4 pt-6">
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-[#008074] text-white rounded-lg font-semibold hover:bg-[#006b61] transition-all hover:scale-105 shadow-md"
-                >
-                  <MousePointer2 size={20} />
-                  Live Demo
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg font-semibold hover:bg-gray-700 transition-all hover:scale-105 shadow-md"
-                >
-                  <Github size={20} />
-                  GitHub
-                </a>
+                    <MousePointer2 size={20} />
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-8 py-3.5 bg-gray-900 text-white rounded-xl font-bold hover:bg-gray-800 transition-all hover:scale-105 shadow-lg hover:shadow-gray-900/30"
+                  >
+                    <Github size={20} />
+                    GitHub
+                  </a>
+                </div>
               </div>
             </div>
+            
+            {/* Divider (except for last item) */}
+            {i !== displayProjects.length - 1 && (
+              <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-1/3 h-px bg-gray-200" />
+            )}
           </div>
         ))}
       </div>
 
       {!showAll && filteredProjects.length > 3 && (
-        <div className="mt-20 mb-10">
+        <div className="mt-24 mb-10">
           <Link
             href="/projects"
-            className="px-8 py-4 bg-white border-2 border-[#008074] text-[#008074] rounded-full font-bold text-lg hover:bg-[#008074] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="px-10 py-5 bg-white border-2 border-[#008074] text-[#008074] rounded-full font-bold text-xl hover:bg-[#008074] hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
           >
             View More Projects
           </Link>

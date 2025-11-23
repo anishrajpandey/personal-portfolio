@@ -51,7 +51,7 @@ const Skills = () => {
               key={category}
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border-t-4 border-[#008074] group"
             >
-              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-[#008074] transition-colors">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-[#008074] transition-colors break-words">
                 {category}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -69,16 +69,6 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* Gogo Integration */}
-      <div className="absolute bottom-0 right-0 md:right-10 w-32 md:w-48 opacity-90 pointer-events-none hidden md:block z-0">
-        <Image
-          src="/gogo/gogo_grey_thinking.png"
-          alt="Thinking Gogo"
-          width={200}
-          height={200}
-          className="object-contain"
-        />
-      </div>
     </section>
   );
 };

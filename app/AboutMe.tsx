@@ -77,21 +77,21 @@ const AboutMe = () => {
             </div>
           </div>
           {/* image */}
-          <div className="w-[80vw] md:w-[40vw] relative group cursor-pointer">
+          <div className="w-[80vw] md:w-[40vw] relative group cursor-pointer aspect-square md:aspect-auto md:h-[600px]">
             <div className="relative w-full h-full">
               <Image
                 src={"/image.png"}
                 alt="Anish Grayscale"
-                className="w-full object-contain h-full z-10 relative transition-opacity duration-500 group-hover:opacity-0"
-                width={1600}
-                height={1600}
+                className="object-contain w-full h-full z-10 relative transition-opacity duration-500 group-hover:opacity-0"
+                fill
+                sizes="(max-width: 768px) 80vw, 40vw"
               />
               <Image
                 src={"/aboutme.png"}
                 alt="Anish Color"
-                className="w-full object-contain h-full z-10 absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                width={1600}
-                height={1600}
+                className="object-contain w-full h-full z-10 absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                fill
+                sizes="(max-width: 768px) 80vw, 40vw"
               />
             </div>
           </div>

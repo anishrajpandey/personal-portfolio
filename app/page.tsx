@@ -10,13 +10,13 @@ import Education from "./Education";
 
 export default function Home() {
   return (
-    <>
+    <div className="space-y-24 md:space-y-32">
       <Landing />
       <AboutMe />
       <Projects />
       <Experience />
       <Skills />
       <Education />
-    </>
+    </div>
   );
 }

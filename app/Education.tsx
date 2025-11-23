@@ -88,27 +88,6 @@ const Education = () => {
         </div>
       </div>
 
-      {/* Gogo Integration */}
-      <div className="absolute bottom-0 left-0 md:left-20 w-40 md:w-56 opacity-90 pointer-events-none hidden lg:block">
-        <Image
-          src="/gogo/gogo_orange_nerd.png"
-          alt="Nerd Gogo"
-          width={300}
-          height={300}
-          className="object-contain"
-        />
-      </div>
-
-      {/* Gogo Integration */}
-      <div className="absolute bottom-10 left-10 w-32 md:w-40 opacity-80 pointer-events-none hidden md:block">
-        <Image
-          src="/gogo/gogo_grey_sitting.png"
-          alt="Studying Gogo"
-          width={160}
-          height={160}
-          className="object-contain"
-        />
-      </div>
     </section>
   );
 };
