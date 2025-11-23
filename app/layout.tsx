@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Baloo_Bhai_2, Montserrat } from "next/font/google";
 import "./globals.css";
+import { ContactProvider } from "@/context/ContactContext";
+import Navbar from "./Navbar";
+import GlobalContactDialog from "@/components/GlobalContactDialog";
+
 const balooBhai = Baloo_Bhai_2({
   variable: "--font-baloo-bhai",
   weight: ["400", "500", "700"],
@@ -74,11 +78,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-
       <body
         className={`${MontserratFont.className} ${balooBhai.className} antialiased`}
       >
-        {children}
+        <ContactProvider>
+          <Navbar />
+          {children}
+          <GlobalContactDialog />
+        </ContactProvider>
       </body>
     </html>
   );

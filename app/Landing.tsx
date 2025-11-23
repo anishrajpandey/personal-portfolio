@@ -168,8 +168,7 @@ function DialogBubble({ text, className = "", tailClassName = "" }: DialogBubble
 
 export default function Landing() {
   const backgroundRef = useRef<HTMLDivElement>(null);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
+
   const [backgroundIcons, setBackgroundIcons] = useState<BackgroundIcon[]>([]);
   
   const [showGogo, setShowGogo] = useState(false);
@@ -311,43 +310,9 @@ export default function Landing() {
     generateIcons();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Get current scroll position
-      const currentScrollPos = window.pageYOffset;
-
-      // Determine if the user is scrolling up or down
-      const isScrollingDown = currentScrollPos > prevScrollPos;
-
-      // Only update visibility if the user has scrolled a minimum amount
-      // This prevents small scroll adjustments from triggering the navbar
-      const scrollDifference = Math.abs(currentScrollPos - prevScrollPos);
-      if (scrollDifference > 10) {
-        setVisible(!isScrollingDown);
-      }
-
-      // Update previous scroll position
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Clean up event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
 
   return (
     <section className="relative h-screen">
-      <div
-        className={`h-12 fixed top-0 left-0 right-0 z-50 bg-white shadow transition-transform duration-300 bg-pink-500 ${
-          visible ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        Anish Raj Pandey
-      </div>
         {/* main landing page */}
       <div
         id="home"

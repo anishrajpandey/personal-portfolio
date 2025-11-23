@@ -4,12 +4,19 @@ import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Landing from "./Landing";
 
+import Skills from "./Skills";
+import Experience from "./Experience";
+import Education from "./Education";
+
 export default function Home() {
   return (
     <>
       <Landing />
       <AboutMe />
       <Projects />
+      <Experience />
+      <Skills />
+      <Education />
     </>
   );
 }
