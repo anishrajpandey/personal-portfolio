@@ -29,8 +29,11 @@ const AboutMe = () => {
 
   return (
     <>
-      <div id={"aboutMain"} className="px-2 md:px-8 overflow-hidden">
-        <div className="text-xl md:text-6xl font-bold tracking-wide text-center justify-center items-center gap-1 mb-5">
+      <div
+        id={"aboutMain"}
+        className="px-2 md:px-8 overflow-hidden bg-[#008074]/5"
+      >
+        <div className="text-xl md:text-6xl font-bold tracking-wide text-center justify-center items-center gap-1 mb-5 pt-10">
           <span>A little bit </span>
           <span className="text-[#008074]">About Me</span>
         </div>
@@ -67,12 +70,20 @@ const AboutMe = () => {
               make an impact. Let’s connect and build something amazing together!
             </div>
             <div className="w-full py-8 md:py-16 flex flex-col items-start gap-6">
-              <button
-                className="bg-[var(--color-primary)] hover:bg-[#265a49] text-white font-bold py-3 px-6 rounded-sm transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
-                onClick={openContact}
-              >
-                Let's Get to know each other
-              </button>
+              <div className="flex gap-4">
+                <button
+                  className="bg-[var(--color-primary)] hover:bg-[#265a49] text-white font-bold py-3 px-6 rounded-sm transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                  onClick={openContact}
+                >
+                  Contact Me
+                </button>
+                <a
+                  href="/life"
+                  className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-sm transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                >
+                  Know More
+                </a>
+              </div>
               <SocialIcons iconSize={28} />
             </div>
           </div>
@@ -82,17 +93,11 @@ const AboutMe = () => {
               <Image
                 src={"/image.png"}
                 alt="Anish Grayscale"
-                className="object-contain w-full h-full z-10 relative transition-opacity duration-500 group-hover:opacity-0"
+                className="object-contain w-full h-full z-10 relative transition-opacity duration-500 "
                 fill
                 sizes="(max-width: 768px) 80vw, 40vw"
               />
-              <Image
-                src={"/aboutme.png"}
-                alt="Anish Color"
-                className="object-contain w-full h-full z-10 absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                fill
-                sizes="(max-width: 768px) 80vw, 40vw"
-              />
+       
             </div>
           </div>
         </main>

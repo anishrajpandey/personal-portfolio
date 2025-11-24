@@ -23,10 +23,10 @@ const projectsData: Project[] = [
   {
     title: "AI Wardrobe Manager",
     description:
-      "AI-powered clothing classifier and outfit recommendation engine using Google Vision API.",
+      "AI-powered clothing classifier and outfit recommendation engine using Google Vision API. Analyzes your wardrobe to suggest stylish combinations.",
     srcWeb: "/projectImages/pustikaWeb.png",
-    live: "#",
-    github: "#",
+    live: "https://styleis-tech-1.onrender.com/",
+    github: "https://github.com/anishrajpandey/styleistech",
     features: ["Clothing Detection", "Style Analysis", "Outfit Recommendations"],
     tech: ["Python", "Flask", "Google Vision API", "React"],
     category: "AI/Data",
@@ -36,10 +36,10 @@ const projectsData: Project[] = [
   {
     title: "Housing Price Prediction",
     description:
-      "ML model predicting housing prices using regression algorithms and data analysis.",
+      "ML model predicting housing prices using regression algorithms and data analysis. Includes comprehensive preprocessing and model training pipelines.",
     srcWeb: "/projectImages/datanexus_desktop.png",
-    live: "#",
-    github: "#",
+    live: "",
+    github: "https://github.com/anishrajpandey/Machine_Learning_Housing_Corporation",
     features: ["Data Preprocessing", "Regression Models", "Data Visualization"],
     tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
     category: "AI/Data",
@@ -49,10 +49,10 @@ const projectsData: Project[] = [
   {
     title: "CO2 Emission Prediction",
     description:
-      "Full-stack tool forecasting CO2 emissions with interactive visualizations using NASA data.",
+      "Full-stack tool forecasting CO2 emissions with interactive visualizations using NASA data. backend scripts and data handling.",
     srcWeb: "/projectImages/datanexus_desktop.png",
-    live: "#",
-    github: "#",
+    live: "https://data-nexus.netlify.app/",
+    github: "https://github.com/anishrajpandey/Data-Nexus__spaceapps/tree/main",
     features: ["Emission Forecasting", "Interactive Charts", "NASA Datasets"],
     tech: ["React", "Python", "PyTorch", "Matplotlib"],
     category: "AI/Data",
@@ -62,10 +62,10 @@ const projectsData: Project[] = [
   {
     title: "Prompt Injection Detector",
     description:
-      "Classifier detecting potential prompt-injection attacks in user input using NLP techniques.",
+      "Classifier detecting potential prompt-injection attacks in user input using NLP techniques. Includes dataset generation and API.",
     srcWeb: "/projectImages/pustikaWeb.png",
-    live: "#",
-    github: "#",
+    live: "https://anishrajpandey.github.io/Prompt_Injection_Detector/",
+    github: "https://github.com/anishrajpandey/Prompt_Injection_Detector",
     features: ["Attack Detection", "TF-IDF Model", "Security Focused"],
     tech: ["Next.js", "OpenAI API", "Python", "Scikit-learn"],
     category: "AI/Data",
@@ -184,15 +184,17 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
 
                 {/* Buttons */}
                 <div className="flex gap-5 pt-4">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-8 py-3.5 bg-[#008074] text-white rounded-xl font-bold hover:bg-[#006b61] transition-all hover:scale-105 shadow-lg hover:shadow-[#008074]/30"
-                  >
-                    <MousePointer2 size={20} />
-                    Live Demo
-                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-8 py-3.5 bg-[#008074] text-white rounded-xl font-bold hover:bg-[#006b61] transition-all hover:scale-105 shadow-lg hover:shadow-[#008074]/30"
+                    >
+                      <MousePointer2 size={20} />
+                      Live Demo
+                    </a>
+                  )}
                   <a
                     href={project.github}
                     target="_blank"

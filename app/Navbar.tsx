@@ -87,13 +87,23 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Right: Contact Button */}
-        <button
-          onClick={openContact}
-          className="bg-[#008074] hover:bg-[#006b61] text-white px-5 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg cursor-pointer"
-        >
-          Contact me
-        </button>
+        {/* Right: Contact & Resume Buttons */}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={openContact}
+            className="bg-[#008074] hover:bg-[#006b61] text-white px-5 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg cursor-pointer"
+          >
+            Contact me
+          </button>
+          <a
+            href="/Resume_Anish.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-black hover:bg-gray-800 text-white px-5 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg cursor-pointer"
+          >
+            Resume
+          </a>
+        </div>
       </div>
     </div>
   );

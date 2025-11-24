@@ -71,6 +71,8 @@ export const metadata: Metadata = {
   category: "Technology",
 };
 
+import Footer from "./Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -79,12 +81,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${MontserratFont.className} ${balooBhai.className} antialiased`}
+        className={`${MontserratFont.className} ${balooBhai.className} antialiased flex flex-col min-h-screen`}
       >
         <ContactProvider>
           <Navbar />
-          {children}
+          <main className="flex-grow">
+            {children}
+          </main>
           <GlobalContactDialog />
+          <Footer />
         </ContactProvider>
       </body>
     </html>
