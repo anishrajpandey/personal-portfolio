@@ -73,6 +73,8 @@ export const metadata: Metadata = {
 
 import Footer from "./Footer";
 
+import ChatWidget from "./components/ChatWidget";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -89,6 +91,7 @@ export default function RootLayout({
             {children}
           </main>
           <GlobalContactDialog />
+          <ChatWidget />
           <Footer />
         </ContactProvider>
       </body>

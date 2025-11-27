@@ -1,4 +1,3 @@
-import React from "react";
 import Projects_AOS from "./Projects_AOS";
 
 export default function Projects() {

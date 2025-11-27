@@ -8,10 +8,6 @@ interface LoadingScreenProps {
 }
 
 const loadingTexts = [
-  "Summoning Gogo... 🐶",
-  "Charging pixels... ⚡",
-  "Teaching Gogo math... 🧮",
-  "Polishing the 3D model... ✨",
   "Brewing coffee... ☕",
   "Loading awesomeness... 🚀",
 ];

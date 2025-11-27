@@ -20,19 +20,7 @@ interface Project {
 }
 
 const projectsData: Project[] = [
-  {
-    title: "AI Wardrobe Manager",
-    description:
-      "AI-powered clothing classifier and outfit recommendation engine using Google Vision API. Analyzes your wardrobe to suggest stylish combinations.",
-    srcWeb: "/projectImages/wardobe.png",
-    live: "https://styleis-tech-1.onrender.com/",
-    github: "https://github.com/anishrajpandey/styleistech",
-    features: ["Clothing Detection", "Style Analysis", "Outfit Recommendations"],
-    tech: ["Python", "Flask", "Google Vision API", "React"],
-    category: ["AI/Data", "Web"],
-    hours: "120+",
-    date: "Fall 2024",
-  },
+  
   {
     title: "Housing Price Prediction",
     description:
@@ -58,6 +46,19 @@ const projectsData: Project[] = [
     category: ["AI/Data", "Web"],
     hours: "100+",
     date: "Spring 2024",
+  },
+  {
+    title: "AI Wardrobe Manager",
+    description:
+      "AI-powered clothing classifier and outfit recommendation engine using Google Vision API. Analyzes your wardrobe to suggest stylish combinations.",
+    srcWeb: "/projectImages/wardobe.png",
+    live: "https://styleis-tech-1.onrender.com/",
+    github: "https://github.com/anishrajpandey/styleistech",
+    features: ["Clothing Detection", "Style Analysis", "Outfit Recommendations"],
+    tech: ["Python", "Flask", "Google Vision API", "React"],
+    category: ["AI/Data", "Web"],
+    hours: "120+",
+    date: "Fall 2024",
   },
   {
     title: "Prompt Injection Detector",
