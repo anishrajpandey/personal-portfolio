@@ -179,16 +179,16 @@ export default function Landing() {
   const mouseY = useMotionValue(-1000);
 
   useEffect(() => {
-    // Phase 1: 2s - 4s "Hi! Welcome"
-    const t1 = setTimeout(() => setShowGogo(true), 2000);
-    const t1_end = setTimeout(() => setShowGogo(false), 4000);
+    // Phase 1: 1s - 2s "Hi! Welcome"
+    const t1 = setTimeout(() => setShowGogo(true), 1000);
+    const t1_end = setTimeout(() => setShowGogo(false), 2000);
     
-    // Phase 2: 5s - 8s "This is Gogo..."
-    const t2 = setTimeout(() => setShowWelcome(true), 5000);
-    const t3 = setTimeout(() => setShowWelcome(false), 8000);
+    // Phase 2: 2.5s - 4s "Welcome to my digital space..."
+    const t2 = setTimeout(() => setShowWelcome(true), 2500);
+    const t3 = setTimeout(() => setShowWelcome(false), 4000);
     
-    // Phase 3: 11s+ "Anish's got some interesting stuff..."
-    const t4 = setTimeout(() => setShowScroll(true), 11000);
+    // Phase 3: 5.5s+ "Scroll down..."
+    const t4 = setTimeout(() => setShowScroll(true), 5500);
 
     return () => {
       clearTimeout(t1);
@@ -344,7 +344,7 @@ export default function Landing() {
 
             {showWelcome && (
               <DialogBubble 
-                text="My name is Gogo 🐶" 
+                text="Welcome to my digital space! ✨" 
                 className="top-[20%] right-[20%] md:right-[30%]" 
                 tailClassName="-bottom-2 left-4" 
               />

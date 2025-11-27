@@ -27,10 +27,19 @@ export default function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
     if (!formRef.current) return;
 
     try {
-      await emailjs.sendForm(
+      const formData = new FormData(formRef.current);
+      
+      const templateParams = {
+        name: formData.get("user_name"),
+        email: formData.get("user_email"),
+        message: formData.get("message"),
+        time: new Date().toLocaleString(),
+      };
+
+      await emailjs.send(
         "service_43oxci5", // Service ID
         "template_kzh6a66", // Template ID
-        formRef.current,
+        templateParams,
         "kiwa8FcA6ygfexH6n" // Public Key
       );
 

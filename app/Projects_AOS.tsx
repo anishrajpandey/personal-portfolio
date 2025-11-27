@@ -14,7 +14,7 @@ interface Project {
   github: string;
   features: string[];
   tech: string[];
-  category: "AI/Data" | "Web";
+  category: ("AI/Data" | "Web")[];
   hours: string;
   date: string;
 }
@@ -24,12 +24,12 @@ const projectsData: Project[] = [
     title: "AI Wardrobe Manager",
     description:
       "AI-powered clothing classifier and outfit recommendation engine using Google Vision API. Analyzes your wardrobe to suggest stylish combinations.",
-    srcWeb: "/projectImages/pustikaWeb.png",
+    srcWeb: "/projectImages/wardobe.png",
     live: "https://styleis-tech-1.onrender.com/",
     github: "https://github.com/anishrajpandey/styleistech",
     features: ["Clothing Detection", "Style Analysis", "Outfit Recommendations"],
     tech: ["Python", "Flask", "Google Vision API", "React"],
-    category: "AI/Data",
+    category: ["AI/Data", "Web"],
     hours: "120+",
     date: "Fall 2024",
   },
@@ -37,12 +37,12 @@ const projectsData: Project[] = [
     title: "Housing Price Prediction",
     description:
       "ML model predicting housing prices using regression algorithms and data analysis. Includes comprehensive preprocessing and model training pipelines.",
-    srcWeb: "/projectImages/datanexus_desktop.png",
+    srcWeb: "/projectImages/housing.png",
     live: "",
     github: "https://github.com/anishrajpandey/Machine_Learning_Housing_Corporation",
     features: ["Data Preprocessing", "Regression Models", "Data Visualization"],
     tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-    category: "AI/Data",
+    category: ["AI/Data"],
     hours: "80+",
     date: "Spring 2024",
   },
@@ -55,7 +55,7 @@ const projectsData: Project[] = [
     github: "https://github.com/anishrajpandey/Data-Nexus__spaceapps/tree/main",
     features: ["Emission Forecasting", "Interactive Charts", "NASA Datasets"],
     tech: ["React", "Python", "PyTorch", "Matplotlib"],
-    category: "AI/Data",
+    category: ["AI/Data", "Web"],
     hours: "100+",
     date: "Spring 2024",
   },
@@ -68,7 +68,7 @@ const projectsData: Project[] = [
     github: "https://github.com/anishrajpandey/Prompt_Injection_Detector",
     features: ["Attack Detection", "TF-IDF Model", "Security Focused"],
     tech: ["Next.js", "OpenAI API", "Python", "Scikit-learn"],
-    category: "AI/Data",
+    category: ["AI/Data", "Web"],
     hours: "60+",
     date: "Fall 2023",
   },
@@ -83,7 +83,7 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
 
   const filteredProjects = projectsData.filter((project) => {
     if (activeTab === "All") return true;
-    return project.category === activeTab;
+    return project.category.includes(activeTab);
   });
 
   const displayProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
@@ -144,9 +144,13 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
               {/* Content Side */}
               <div className="w-full md:w-1/2 space-y-8">
                 <div className="flex items-center gap-4">
-                   <span className="px-4 py-1.5 bg-[#008074]/10 text-[#008074] rounded-full text-sm font-bold tracking-wide uppercase">
-                      {project.category}
-                   </span>
+                   <div className="flex gap-2">
+                     {project.category.map((cat, idx) => (
+                       <span key={idx} className="px-4 py-1.5 bg-[#008074]/10 text-[#008074] rounded-full text-sm font-bold tracking-wide uppercase">
+                          {cat}
+                       </span>
+                     ))}
+                   </div>
                    <div className="flex items-center gap-6 text-gray-500 text-sm font-medium">
                       <span className="flex items-center gap-2"><Clock size={18}/> {project.hours}</span>
                       <span className="flex items-center gap-2"><Calendar size={18}/> {project.date}</span>
