@@ -13,14 +13,14 @@ const projects = [
   },
   {
     title: "MNIST ML Algorithm",
-    status: "Completed",
+    status: "In Progress",
     difficulty: "Hard",
     desc: "Handwritten digit recognition from scratch.",
     gogo: "/gogo/gogo_math.png",
   },
   {
     title: "StyleIs.Tech Redevelopment",
-    status: "In Progress",
+    status: "Planned",
     difficulty: "Hard",
     desc: "Rebuilding the fashion tech platform from scratch.",
     gogo: "/gogo/gogo_orange_confused.png",
@@ -57,7 +57,7 @@ export default function BuildingSection() {
                   <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
                   <span className={`px-2 py-0.5 text-xs rounded-full border ${
                     project.status === "Live" ? "border-green-500 text-green-600" :
-                    project.status === "Completed" ? "border-blue-500 text-blue-600" :
+                    project.status === "In Progress" ? "border-blue-500 text-blue-600" :
                     "border-purple-500 text-purple-600"
                   }`}>
                     {project.status}

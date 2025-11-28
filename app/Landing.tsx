@@ -171,31 +171,19 @@ export default function Landing() {
 
   const [backgroundIcons, setBackgroundIcons] = useState<BackgroundIcon[]>([]);
   
-  const [showGogo, setShowGogo] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(false);
-  const [showScroll, setShowScroll] = useState(false);
+  const [showHint, setShowHint] = useState(false);
   
   const mouseX = useMotionValue(-1000); // Start off-screen
   const mouseY = useMotionValue(-1000);
 
   useEffect(() => {
-    // Phase 1: 1s - 2s "Hi! Welcome"
-    const t1 = setTimeout(() => setShowGogo(true), 1000);
-    const t1_end = setTimeout(() => setShowGogo(false), 2000);
-    
-    // Phase 2: 2.5s - 4s "Welcome to my digital space..."
-    const t2 = setTimeout(() => setShowWelcome(true), 2500);
-    const t3 = setTimeout(() => setShowWelcome(false), 4000);
-    
-    // Phase 3: 5.5s+ "Scroll down..."
-    const t4 = setTimeout(() => setShowScroll(true), 5500);
+    // Show hint after 10 seconds, hide after 4 seconds (total 14s)
+    const t1 = setTimeout(() => setShowHint(true), 10000);
+    const t2 = setTimeout(() => setShowHint(false), 14000);
 
     return () => {
       clearTimeout(t1);
-      clearTimeout(t1_end);
       clearTimeout(t2);
-      clearTimeout(t3);
-      clearTimeout(t4);
     };
   }, []);
 
@@ -334,26 +322,10 @@ export default function Landing() {
               src="https://sketchfab.com/models/890bbeb2ad5a4bd6b80df2089416aae7/embed?autostart=1&preload=1&transparent=0&scrollwheel=0"
             />
             
-            {showGogo && (
+            {showHint && (
               <DialogBubble 
-                text="Welcome in... 🙏" 
-                className="top-[20%] left-[25%] md:left-[35%]" 
-                tailClassName="-bottom-2 right-4" 
-              />
-            )}
-
-            {showWelcome && (
-              <DialogBubble 
-                text="Welcome to my digital space! ✨" 
-                className="top-[20%] right-[20%] md:right-[30%]" 
-                tailClassName="-bottom-2 left-4" 
-              />
-            )}
-
-            {showScroll && (
-              <DialogBubble 
-                text="Scroll down to learn more about Anish! 👇" 
-                className="top-[20%] right-[20%] md:right-[30%]" 
+                text="Gogo is looking down to learn more about Anish. You might join him by scrolling down" 
+                className="top-[20%] right-[10%] md:right-[20%] max-w-sm" 
                 tailClassName="-bottom-2 left-4" 
               />
             )}

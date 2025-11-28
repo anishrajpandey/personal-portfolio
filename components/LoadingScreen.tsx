@@ -25,8 +25,8 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           setTimeout(onComplete, 500); // Small delay before unmounting
           return 100;
         }
-        // Random increment between 1 and 5
-        return Math.min(prev + Math.random() * 5, 100);
+        // Increment to finish in approx 1.5s (15 ticks * 100ms) + 0.5s delay = 2s
+        return Math.min(prev + 7, 100);
       });
     }, 100);
 

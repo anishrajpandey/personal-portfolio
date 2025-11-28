@@ -2,19 +2,23 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const moments = [
   {
     caption: "Late night debugging session ☕️",
     image: "/gallery/coding_late_night.jpg",
+    className: "object-cover",
   },
   {
     caption: "Hackathon grind 🚀",
     image: "/gallery/hackathon.png",
+    className: "object-cover object-left", // Focus on left side
   },
   {
     caption: "Weekend hike views 🏔️",
     image: "/gallery/hike.jpg",
+    className: "object-cover",
   },
 ];
 
@@ -24,7 +28,12 @@ export default function LatelySection() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-3xl font-bold text-[var(--color-primary)] text-left">Lately</h2>
-          <span className="text-sm text-gray-500">Snapshots from my life</span>
+          <Link 
+            href="/gallery" 
+            className="text-sm text-[var(--color-secondary)] hover:underline font-medium"
+          >
+            View All Pictures &rarr;
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -41,7 +50,7 @@ export default function LatelySection() {
                 src={moment.image}
                 alt={moment.caption}
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                className={`${moment.className} group-hover:scale-110 transition-transform duration-700`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <p className="text-white text-sm font-medium">{moment.caption}</p>

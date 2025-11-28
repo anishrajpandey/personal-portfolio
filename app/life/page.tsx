@@ -4,9 +4,7 @@ import LifeHeader from "../components/life/LifeHeader";
 import LearningSection from "../components/life/LearningSection";
 import ListeningSection from "../components/life/ListeningSection";
 import BuildingSection from "../components/life/BuildingSection";
-import WritingSection from "../components/life/WritingSection";
 import LatelySection from "../components/life/LatelySection";
-import GallerySection from "../components/life/GallerySection";
 
 export default function LifePage() {
   return (
@@ -16,7 +14,6 @@ export default function LifePage() {
       <ListeningSection />
       <BuildingSection />
       <LatelySection />
-      <GallerySection />
       
       {/* Footer Spacer */}
       <div className="h-20" />
