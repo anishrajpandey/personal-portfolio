@@ -2,7 +2,7 @@ import Projects_AOS from "./Projects_AOS";
 
 export default function Projects() {
   return (
-    <main id="projects" className="w-screen overflow-hidden ">
+    <main id="projects" className="w-full overflow-hidden bg-gray-50 py-20">
       <div className="text-2xl md:text-6xl font-bold tracking-wide text-center justify-center items-center gap-1">
         <span className="  text-[#008074]">Projects</span>
         <span> worth mentioning </span>

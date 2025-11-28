@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 bg-gray-50 relative overflow-hidden">
+    <section id="education" className="py-20 bg-gray-50 relative overflow-hidden" data-gogo-cursor="true">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

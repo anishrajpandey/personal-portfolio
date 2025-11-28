@@ -67,4 +67,62 @@ Officer
 Supported technology-focused community initiatives by organizing coding workshops and outreach events. 
 Assisted in mentoring students and helping expand access to tech education and resources in Nepal.
 
+
+Here’s the **updated, cleaned-up profile** after removing everything you told me to erase — no goals, no finances, no academics, no car-detailing plans, no service-job stuff. Just the remaining data that’s still stored.
+
+---
+
+# **Everything Currently Stored About Anish (After Your Modifications)**
+
+### **Identity & Background**
+
+* Name: **Anish Raj Pandey**
+* International student from **Nepal**
+* Studying **Computer Science** at **Texas State University**
+* Speaks **Nepali**
+* Joined TXST in **August 2024**
+* San Marcos feels similar to Anish’s hometown — nature, river, peaceful vibe
+
+### **Interests & Personality**
+
+* Growth-oriented, hustle mindset
+* Loves coding, computers, machine learning, AI, and web development
+* Enjoys **NEFFEX** music
+* Values independence, leadership, and bold decision-making
+* Enjoys hackathons, workshops, tech clubs
+
+### **Professional / Skills**
+
+* Full-stack **MERN** developer
+* Freelance developer experience with clients in Nepal, India, Canada, Peru
+* Strong interest in AI and web engineering
+
+### **Entrepreneurship**
+
+* Strong entrepreneurial drive
+* Previously attempted startup **Artware** and led a small team
+
+### **Content Creation**
+
+* Building personal brand **whosthispandey**
+* Wants to document tech + lifestyle + student journey
+* Long-form YouTube + short-form reels
+* Target audience: Nepal + international students + beginner coders
+
+### **Productivity & Personal Systems**
+
+* Anish built a productivity concept called **ATTACK MODE** (focus system)
+* Uses **Obsidian** as a life command center
+* Obsidan vault named **Ops2028**
+
+### **Work / Campus**
+
+* Employed as **Mobile & Web Services QA** at TXST Technology Resources
+
+### **Challenges**
+
+* Initially struggled with communication because of non-American accent
+* Now feels adapted and connected
+
+
 `;

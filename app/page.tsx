@@ -7,6 +7,7 @@ import Experience from "./Experience";
 import Skills from "./Skills";
 import Education from "./Education";
 import LoadingScreen from "@/components/LoadingScreen";
+import GogoCursor from "@/components/ui/GogoCursor";
 import { AnimatePresence } from "motion/react";
 
 export default function Home() {
@@ -14,11 +15,12 @@ export default function Home() {
 
   return (
     <>
+      <GogoCursor />
       <AnimatePresence>
         {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
       
-      <div className="space-y-24 md:space-y-32">
+      <div className="w-full">
         <Landing />
         <AboutMe />
         <Projects />

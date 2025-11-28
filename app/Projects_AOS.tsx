@@ -90,7 +90,7 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
   const displayProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   return (
-    <section className="w-full flex flex-col items-center px-4 relative bg-gray-50 py-20 rounded-3xl my-10">
+    <section className="w-full flex flex-col items-center px-4 relative">
       {/* Tabs */}
       <div className="flex gap-4 mb-16 bg-white p-2 rounded-full shadow-sm">
         {["All", "AI/Data", "Web"].map((tab) => (

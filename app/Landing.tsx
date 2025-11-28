@@ -178,8 +178,8 @@ export default function Landing() {
 
   useEffect(() => {
     // Show hint after 10 seconds, hide after 4 seconds (total 14s)
-    const t1 = setTimeout(() => setShowHint(true), 10000);
-    const t2 = setTimeout(() => setShowHint(false), 14000);
+    const t1 = setTimeout(() => setShowHint(true), 15000);
+    const t2 = setTimeout(() => setShowHint(false), 19000);
 
     return () => {
       clearTimeout(t1);
@@ -324,7 +324,7 @@ export default function Landing() {
             
             {showHint && (
               <DialogBubble 
-                text="Gogo is looking down to learn more about Anish. You might join him by scrolling down" 
+                text="Scroll down to learn more about Anish" 
                 className="top-[20%] right-[10%] md:right-[20%] max-w-sm" 
                 tailClassName="-bottom-2 left-4" 
               />

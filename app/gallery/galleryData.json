@@ -1,0 +1,444 @@
+[
+  {
+    "id": "hiketxst",
+    "title": "Hike TXST",
+    "date": "2024-11",
+    "description": "Exploring the hidden spots around Texas State and getting closer to nature again.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/Events/hiketxst/thumbnail_Image (5).jpg",
+        "folder": "hiketxst",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/hiketxst/thumbnail_Image (6).jpg",
+        "folder": "hiketxst",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "hacktx25",
+    "title": "HackTX25",
+    "date": "2024-10",
+    "description": "My first major U.S. hackathon experience and a huge milestone in my CS journey.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/Events/hacktx25/IMG_2998.JPG",
+        "folder": "hacktx25",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/hacktx25/IMG_2999.JPG",
+        "folder": "hacktx25",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/hacktx25/IMG_3003.JPG",
+        "folder": "hacktx25",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/hacktx25/IMG_3004.JPG",
+        "folder": "hacktx25",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/hacktx25/IMG_3005.JPG",
+        "folder": "hacktx25",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/hacktx25/IMG_3006.JPG",
+        "folder": "hacktx25",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/hacktx25/IMG_3007.JPG",
+        "folder": "hacktx25",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/hacktx25/Screenshot 2025-10-22 at 11.54.45 PM.png",
+        "folder": "hacktx25",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "austintx",
+    "title": "Austin, TX",
+    "date": "2024-09",
+    "description": "Moments from my early days discovering the city that now feels like a second home.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/austintx/IMG_2098.jpeg",
+        "folder": "austintx",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/austintx/IMG_2149.jpeg",
+        "folder": "austintx",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/austintx/IMG_2266.jpeg",
+        "folder": "austintx",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/austintx/IMG_2291.jpeg",
+        "folder": "austintx",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "sagarmathahacks",
+    "title": "Sagarmatha Hacks",
+    "date": "2024-06",
+    "description": "A hackathon where I pushed my limits and learned to build under pressure.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/Events/sagarmathaHacks/1703498680657.jpg",
+        "folder": "sagarmathaHacks",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/sagarmathaHacks/5fbe44ab-d681-4fee-a81f-a1446bc58d75.jpg",
+        "folder": "sagarmathaHacks",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/sagarmathaHacks/d730b0fc-864e-4f00-bb7c-c2012ae82d6b.jpg",
+        "folder": "sagarmathaHacks",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "jamacho hiking",
+    "title": "Jamacho Hiking",
+    "date": "2024-05",
+    "description": "A challenging trail that rewarded me with amazing views and quiet reflection.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/friends/Jamacho hiking/WhatsApp Image 2023-05-30 at 8.47.40 PM (1).jpeg",
+        "folder": "Jamacho hiking",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/Jamacho hiking/WhatsApp Image 2023-05-30 at 8.47.41 PM.jpeg",
+        "folder": "Jamacho hiking",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/Jamacho hiking/WhatsApp Image 2023-05-30 at 8.47.42 PM (1).jpeg",
+        "folder": "Jamacho hiking",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/Jamacho hiking/WhatsApp Image 2023-05-30 at 8.47.42 PM (2).jpeg",
+        "folder": "Jamacho hiking",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/Jamacho hiking/WhatsApp Image 2023-05-30 at 8.47.43 PM (1).jpeg",
+        "folder": "Jamacho hiking",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "chandragiri_hike",
+    "title": "Chandragiri Hike",
+    "date": "2024-01",
+    "description": "A refreshing climb that marked the start of a new year and new goals.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/friends/chandragiri_hike/IMG-20240108-WA0032.jpg",
+        "folder": "chandragiri_hike",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/chandragiri_hike/IMG-20240108-WA0086.jpg",
+        "folder": "chandragiri_hike",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/chandragiri_hike/IMG-20240108-WA0156.jpg",
+        "folder": "chandragiri_hike",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/chandragiri_hike/IMG-20240108-WA0175.jpg",
+        "folder": "chandragiri_hike",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "middle_school_meetup",
+    "title": "Middle School Meetup",
+    "date": "2023-12",
+    "description": "Reconnecting with old friends and realizing how far we’ve all come.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/middle_school_meetup/IMG-20240202-WA0164.jpg",
+        "folder": "middle_school_meetup",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "manichud_hike",
+    "title": "Manichud Hike",
+    "date": "2023-11",
+    "description": "A cold, scenic hike that became one of my favorite memories with friends.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/friends/manichud_hike/IMG-20231125-WA0063.jpg",
+        "folder": "manichud_hike",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/manichud_hike/IMG-20231125-WA0064.jpg",
+        "folder": "manichud_hike",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/manichud_hike/IMG-20231125-WA0070.jpg",
+        "folder": "manichud_hike",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/manichud_hike/IMG-20231125-WA0105.jpg",
+        "folder": "manichud_hike",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "taragon art museum",
+    "title": "Taragon Art Museum",
+    "date": "2023-07",
+    "description": "A calm break from routine where I explored art and creativity.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/friends/Taragon Art Museum/1689346031837.jpg",
+        "folder": "Taragon Art Museum",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/Taragon Art Museum/IMG-20230714-WA0069.jpg",
+        "folder": "Taragon Art Museum",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/Taragon Art Museum/IMG_20230714_142207.jpg",
+        "folder": "Taragon Art Museum",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/friends/Taragon Art Museum/IMG_20230714_142210.jpg",
+        "folder": "Taragon Art Museum",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "highschoolfarewell_photos",
+    "title": "High School Farewell Photos",
+    "date": "2023-05",
+    "description": "A bittersweet goodbye to the people and place that shaped my teenage years.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/highschoolfarewell_photos/IMG_0416.jpg",
+        "folder": "highschoolfarewell_photos",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/highschoolfarewell_photos/IMG_0441.jpg",
+        "folder": "highschoolfarewell_photos",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/highschoolfarewell_photos/IMG_0448.jpg",
+        "folder": "highschoolfarewell_photos",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "microsoft imagine cup ideathon 2023",
+    "title": "Microsoft Imagine Cup Ideathon 2023",
+    "date": "2023-04",
+    "description": "A big confidence boost that pushed me deeper into tech innovation.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/Events/microsoft imagine cup ideathon 2023/1703989633089.jpg",
+        "folder": "microsoft imagine cup ideathon 2023",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/microsoft imagine cup ideathon 2023/1703989633145.jpg",
+        "folder": "microsoft imagine cup ideathon 2023",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/microsoft imagine cup ideathon 2023/1703989633584.jpg",
+        "folder": "microsoft imagine cup ideathon 2023",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "high_school_picnic",
+    "title": "High School Picnic",
+    "date": "2023-04",
+    "description": "One last carefree day with school friends before everyone took different paths.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/high_school_picnic/2c35add9-746c-4b88-bfbe-5f97f69d42e2.jpg",
+        "folder": "high_school_picnic",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/high_school_picnic/659cf61a-3955-4810-a667-5e92123ca5df.jpg",
+        "folder": "high_school_picnic",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/high_school_picnic/da904f4d-b968-46ea-a4b2-d11532221b6f.jpg",
+        "folder": "high_school_picnic",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/high_school_picnic/dae1c3f0-c7e6-417a-ae54-3f859a7a5118.jpg",
+        "folder": "high_school_picnic",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/high_school_picnic/f215f3dd-9ee2-452d-8cc5-c8c32f9e3ee6.jpg",
+        "folder": "high_school_picnic",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "kuhackfest2023",
+    "title": "KUHackfest 2023",
+    "date": "2023-02",
+    "description": "One of my earliest hackathons where I started taking coding seriously.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/Events/kuhackfest2023/IMG_9358.jpg",
+        "folder": "kuhackfest2023",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/kuhackfest2023/IMG_9370.jpg",
+        "folder": "kuhackfest2023",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/kuhackfest2023/IMG_9418.jpg",
+        "folder": "kuhackfest2023",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/kuhackfest2023/IMG_9513.jpg",
+        "folder": "kuhackfest2023",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/kuhackfest2023/IMG_9690.jpg",
+        "folder": "kuhackfest2023",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "million mask march 2022",
+    "title": "Million Mask March 2022",
+    "date": "2022-11",
+    "description": "My first experience joining a public movement and seeing activism up close.",
+    "photos": [
+      {
+        "src": "/gallery/Pictures/Events/Million Mask March 2022/8cc37a67-e2f8-42fb-8313-6939613e36c9-removebg-preview.png",
+        "folder": "Million Mask March 2022",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/Million Mask March 2022/a02552eb-d47c-4744-a588-f24092ab0223.jpg",
+        "folder": "Million Mask March 2022",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/Million Mask March 2022/ansih.jpg",
+        "folder": "Million Mask March 2022",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/gallery/Pictures/Events/Million Mask March 2022/c7e9bc13-0d4e-4a64-a2a3-233558beb1b1.jpg",
+        "folder": "Million Mask March 2022",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  }
+]
