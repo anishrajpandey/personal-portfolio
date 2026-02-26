@@ -32,7 +32,6 @@ const AboutMe = () => {
       <div
         id={"aboutMain"}
         className="px-2 md:px-8 overflow-hidden bg-[#008074]/5 pb-20"
-        data-gogo-cursor="true"
       >
         <div className="text-xl md:text-6xl font-bold tracking-wide text-center justify-center items-center gap-1 mb-5 pt-10">
           <span>A little bit </span>
@@ -68,7 +67,8 @@ const AboutMe = () => {
                 Artificial Intelligence
               </span>
               . I love solving problems and creating meaningful solutions that
-              make an impact. Let’s connect and build something amazing together!
+              make an impact. Let’s connect and build something amazing
+              together!
             </div>
             <div className="w-full py-8 md:py-16 flex flex-col items-start gap-6">
               <div className="flex gap-4">
@@ -98,7 +98,6 @@ const AboutMe = () => {
                 fill
                 sizes="(max-width: 768px) 80vw, 40vw"
               />
-       
             </div>
           </div>
         </main>
