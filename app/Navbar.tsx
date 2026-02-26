@@ -56,7 +56,9 @@ const Navbar = () => {
         className={`h-16 fixed top-0 left-0 right-0 z-[70] transition-all duration-300 ${
           visible ? "translate-y-0" : "-translate-y-full"
         } ${
-          isOpen ? "bg-transparent shadow-none" : "bg-white/90 backdrop-blur-md shadow-sm"
+          isOpen
+            ? "bg-transparent shadow-none"
+            : "bg-white/90 backdrop-blur-md shadow-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
@@ -113,7 +115,7 @@ const Navbar = () => {
               Contact me
             </button>
             <a
-              href="/Resume_Anish.pdf"
+              href="https://docs.google.com/document/d/189LUJOnQO13laHJl54QgGbpQ-92EU8nsa6QpztZ1cE8/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black hover:bg-gray-800 text-white px-5 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg cursor-pointer"
@@ -152,14 +154,14 @@ const Navbar = () => {
                 key={item}
                 onClick={() =>
                   scrollToSection(
-                    item === "About" ? "aboutMain" : item.toLowerCase()
+                    item === "About" ? "aboutMain" : item.toLowerCase(),
                   )
                 }
                 className="text-white text-2xl font-medium hover:text-gray-200 transition-colors"
               >
                 {item}
               </button>
-            )
+            ),
           )}
 
           <div className="flex flex-col items-center gap-4 mt-8">
@@ -173,7 +175,7 @@ const Navbar = () => {
               Contact me
             </button>
             <a
-              href="/Resume_Anish.pdf"
+              href="https://docs.google.com/document/d/189LUJOnQO13laHJl54QgGbpQ-92EU8nsa6QpztZ1cE8/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black text-white px-8 py-3 rounded-full text-xl font-medium shadow-lg hover:bg-gray-800 transition-colors"
