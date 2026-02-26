@@ -23,7 +23,7 @@ const Footer = () => {
     },
     {
       name: "YouTube",
-      url: "https://www.youtube.com/@techzzoid",
+      url: "https://www.youtube.com/@anish.builds",
       icon: <FaYoutube size={24} />,
     },
   ];

@@ -20,14 +20,32 @@ interface Project {
 }
 
 const projectsData: Project[] = [
-  
+  {
+    title: "Customer Support Ticket Classification System",
+    description:
+      "A production-style machine learning microservice for banking systems that classifies incoming customer support tickets into predefined departments using classical NLP techniques (TF-IDF + Logistic Regression).",
+    srcWeb: "/projectImages/triageImage.png",
+    live: "https://anishrajpandey.github.io/ticket-triage",
+    github: "https://github.com/anishrajpandey/ticket-triage",
+    features: [
+      "Automated Category Prediction",
+      "Confidence-Aware Routing",
+      "TF-IDF Vectorization",
+      "FastAPI REST Service",
+    ],
+    tech: ["FastAPI", "Scikit-learn", "Python", "NLTK"],
+    category: ["AI/Data", "Web"],
+    hours: "20+",
+    date: "Spring 2026",
+  },
   {
     title: "Housing Price Prediction",
     description:
       "ML model predicting housing prices using regression algorithms and data analysis. Includes comprehensive preprocessing and model training pipelines.",
     srcWeb: "/projectImages/housing.png",
     live: "",
-    github: "https://github.com/anishrajpandey/Machine_Learning_Housing_Corporation",
+    github:
+      "https://github.com/anishrajpandey/Machine_Learning_Housing_Corporation",
     features: ["Data Preprocessing", "Regression Models", "Data Visualization"],
     tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
     category: ["AI/Data"],
@@ -47,19 +65,7 @@ const projectsData: Project[] = [
     hours: "100+",
     date: "Spring 2024",
   },
-  {
-    title: "AI Wardrobe Manager",
-    description:
-      "AI-powered clothing classifier and outfit recommendation engine using Google Vision API. Analyzes your wardrobe to suggest stylish combinations.",
-    srcWeb: "/projectImages/wardobe.png",
-    live: "https://styleis-tech-1.onrender.com/",
-    github: "https://github.com/anishrajpandey/styleistech",
-    features: ["Clothing Detection", "Style Analysis", "Outfit Recommendations"],
-    tech: ["Python", "Flask", "Google Vision API", "React"],
-    category: ["AI/Data", "Web"],
-    hours: "120+",
-    date: "Fall 2024",
-  },
+
   {
     title: "Prompt Injection Detector",
     description:
@@ -87,7 +93,9 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
     return project.category.includes(activeTab);
   });
 
-  const displayProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
+  const displayProjects = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, 3);
 
   return (
     <section className="w-full flex flex-col items-center px-4 relative">
@@ -99,7 +107,7 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
             onClick={() => setActiveTab(tab as any)}
             className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
               activeTab === tab
-                ? "bg-[#008074] text-white shadow-md"
+                ? "bg-[var(--color-primary)] text-white shadow-md"
                 : "text-gray-600 hover:bg-gray-100"
             }`}
           >
@@ -126,18 +134,31 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
                     height={500}
                     className="w-full h-auto object-cover"
                   />
-                  
+
                   {/* Mobile Card Overlay (visible only on mobile) */}
                   <div className="absolute inset-0 bg-black/80 flex flex-col justify-center items-center p-6 text-white md:hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                     <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                     <div className="flex items-center gap-4 text-sm mb-4">
-                        <span className="flex items-center gap-1"><Clock size={14}/> {project.hours}</span>
-                        <span className="flex items-center gap-1"><Calendar size={14}/> {project.date}</span>
-                     </div>
-                     <p className="text-sm text-center mb-4">{project.description}</p>
-                     <div className="flex gap-2 flex-wrap justify-center">
-                        {project.tech.slice(0,3).map(t => <span key={t} className="text-xs bg-[#008074] px-2 py-1 rounded">{t}</span>)}
-                     </div>
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <div className="flex items-center gap-4 text-sm mb-4">
+                      <span className="flex items-center gap-1">
+                        <Clock size={14} /> {project.hours}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Calendar size={14} /> {project.date}
+                      </span>
+                    </div>
+                    <p className="text-sm text-center mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-2 flex-wrap justify-center">
+                      {project.tech.slice(0, 3).map((t) => (
+                        <span
+                          key={t}
+                          className="text-xs bg-[var(--color-primary)] px-2 py-1 rounded"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -145,17 +166,24 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
               {/* Content Side */}
               <div className="w-full md:w-1/2 space-y-8">
                 <div className="flex items-center gap-4">
-                   <div className="flex gap-2">
-                     {project.category.map((cat, idx) => (
-                       <span key={idx} className="px-4 py-1.5 bg-[#008074]/10 text-[#008074] rounded-full text-sm font-bold tracking-wide uppercase">
-                          {cat}
-                       </span>
-                     ))}
-                   </div>
-                   <div className="flex items-center gap-6 text-gray-500 text-sm font-medium">
-                      <span className="flex items-center gap-2"><Clock size={18}/> {project.hours}</span>
-                      <span className="flex items-center gap-2"><Calendar size={18}/> {project.date}</span>
-                   </div>
+                  <div className="flex gap-2">
+                    {project.category.map((cat, idx) => (
+                      <span
+                        key={idx}
+                        className="px-4 py-1.5 bg-[var(--color-primary)]/10 text-[var(--color-primary)] rounded-full text-sm font-bold tracking-wide uppercase"
+                      >
+                        {cat}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-6 text-gray-500 text-sm font-medium">
+                    <span className="flex items-center gap-2">
+                      <Clock size={18} /> {project.hours}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <Calendar size={18} /> {project.date}
+                    </span>
+                  </div>
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
@@ -168,8 +196,11 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
                 {/* Features */}
                 <ul className="space-y-3">
                   {project.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-gray-700 font-medium">
-                      <span className="w-2.5 h-2.5 bg-[#008074] rounded-full" />
+                    <li
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-700 font-medium"
+                    >
+                      <span className="w-2.5 h-2.5 bg-[var(--color-primary)] rounded-full" />
                       {feature}
                     </li>
                   ))}
@@ -180,7 +211,7 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
                   {project.tech.map((item, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-semibold hover:border-[#008074] hover:text-[#008074] transition-colors duration-300 shadow-sm"
+                      className="px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-semibold hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors duration-300 shadow-sm"
                     >
                       {item}
                     </span>
@@ -194,7 +225,7 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-8 py-3.5 bg-[#008074] text-white rounded-xl font-bold hover:bg-[#006b61] transition-all hover:scale-105 shadow-lg hover:shadow-[#008074]/30"
+                      className="flex items-center gap-2 px-8 py-3.5 bg-[var(--color-primary)] text-white rounded-xl font-bold hover:bg-[#006b61] transition-all hover:scale-105 shadow-lg hover:shadow-[#008074]/30"
                     >
                       <MousePointer2 size={20} />
                       Live Demo
@@ -212,7 +243,7 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
                 </div>
               </div>
             </div>
-            
+
             {/* Divider (except for last item) */}
             {i !== displayProjects.length - 1 && (
               <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-1/3 h-px bg-gray-200" />
@@ -225,7 +256,7 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
         <div className="mt-24 mb-10">
           <Link
             href="/projects"
-            className="px-10 py-5 bg-white border-2 border-[#008074] text-[#008074] rounded-full font-bold text-xl hover:bg-[#008074] hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+            className="px-10 py-5 bg-white border-2 border-[var(--color-primary)] text-[var(--color-primary)] rounded-full font-bold text-xl hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
           >
             View More Projects
           </Link>
@@ -234,4 +265,3 @@ export default function Projects_AOS({ showAll = false }: ProjectsAOSProps) {
     </section>
   );
 }
-

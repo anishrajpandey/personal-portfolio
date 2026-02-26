@@ -23,13 +23,13 @@ const SocialIcons = ({ className = "", iconSize = 24 }: SocialIconsProps) => {
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://www.instagram.com/anishrajpandey/",
+      url: "https://www.instagram.com/anishrajpandey021/",
       color: "hover:text-[#E1306C]",
     },
     {
       name: "YouTube",
       icon: Youtube,
-      url: "https://www.youtube.com/@anishrajpandey",
+      url: "https://www.youtube.com/@anish.builds",
       color: "hover:text-[#FF0000]",
     },
   ];
